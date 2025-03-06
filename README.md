@@ -20,11 +20,15 @@
 
 ![](./assets/teaser.png)
 
+ℹ️ [AppAgentX](https://appagentx.github.io/) is released, the next-generatation GUI Agent with evolving mechanism.
+
 ℹ️Should you encounter any issues⚠️ while using our project, please feel free to report them on [GitHub Issues](https://github.com/mnotgod96/AppAgent/issues) or reach out to [Dr. Chi Zhang](https://icoz69.github.io/) via email at dr.zhang.chi@outlook.com.
 
 ℹ️This project will be synchronously updated on the official [TencentQQGYLab](https://github.com/TencentQQGYLab/AppAgent) Github Page.
 
 ## 📝 Changelog
+
+- __[2025.3.5]__: [AppAgentX](https://appagentx.github.io/) is released, the next-generatation GUI Agent with evloving mechanism.
 - __[2024.2.8]__: Added `qwen-vl-max` (通义千问-VL) as an alternative multi-modal model. The model is currently free to use but has a relatively poorer performance compared with GPT-4V.
 - __[2024.1.31]__: Released the [evaluation benchmark](https://github.com/mnotgod96/AppAgent/blob/main/assets/testset.md) used during our testing of AppAgent
 - __[2024.1.2]__: 🔥Added an optional method for the agent to bring up a grid overlay on the screen to **tap/swipe anywhere** on the screen.
