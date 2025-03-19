@@ -1,4 +1,4 @@
-# AppAgent-[TencentQQGYLab](https://github.com/TencentQQGYLab)
+# [CHI 2025] AppAgent 
 
 <div align="center">
 
