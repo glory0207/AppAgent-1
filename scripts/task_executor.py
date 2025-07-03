@@ -22,11 +22,17 @@ args = vars(parser.parse_args())
 configs = load_config()
 
 if configs["MODEL"] == "OpenAI":
+    # 检查是否存在新增的配置参数
+    user_id = configs.get("OPENAI_USER_ID", None)
+    api_version = configs.get("OPENAI_API_VERSION", None)
+    
     mllm = OpenAIModel(base_url=configs["OPENAI_API_BASE"],
                        api_key=configs["OPENAI_API_KEY"],
                        model=configs["OPENAI_API_MODEL"],
-                       temperature=configs["TEMPERATURE"],
-                       max_tokens=configs["MAX_TOKENS"])
+                       temperature=float(configs["TEMPERATURE"]),
+                       max_tokens=int(configs["MAX_TOKENS"]),
+                       user_id=user_id,
+                       api_version=api_version)
 elif configs["MODEL"] == "Qwen":
     mllm = QwenModel(api_key=configs["DASHSCOPE_API_KEY"],
                      model=configs["QWEN_MODEL"])
@@ -113,6 +119,12 @@ task_complete = False
 grid_on = False
 rows, cols = 0, 0
 
+def safe_convert_to_bool(value):
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        return value.lower() in ('true', 'yes', '1', 'y')
+    return bool(value)
 
 def area_to_xy(area, subarea):
     area -= 1
@@ -138,8 +150,7 @@ def area_to_xy(area, subarea):
         x, y = x_0 + (width // cols) // 2, y_0 + (height // rows) // 2
     return x, y
 
-
-while round_count < configs["MAX_ROUNDS"]:
+while round_count < int(configs["MAX_ROUNDS"]):
     round_count += 1
     print_with_color(f"Round {round_count}", "yellow")
     screenshot_path = controller.get_screenshot(f"{dir_name}_{round_count}", task_dir)
@@ -164,13 +175,13 @@ while round_count < configs["MAX_ROUNDS"]:
                 bbox = e.bbox
                 center_ = (bbox[0][0] + bbox[1][0]) // 2, (bbox[0][1] + bbox[1][1]) // 2
                 dist = (abs(center[0] - center_[0]) ** 2 + abs(center[1] - center_[1]) ** 2) ** 0.5
-                if dist <= configs["MIN_DIST"]:
+                if dist <= int(configs["MIN_DIST"]):
                     close = True
                     break
             if not close:
                 elem_list.append(elem)
         draw_bbox_multi(screenshot_path, os.path.join(task_dir, f"{dir_name}_{round_count}_labeled.png"), elem_list,
-                        dark_mode=configs["DARK_MODE"])
+                        dark_mode=safe_convert_to_bool(configs["DARK_MODE"]))
         image = os.path.join(task_dir, f"{dir_name}_{round_count}_labeled.png")
         if no_doc:
             prompt = re.sub(r"<ui_document>", "", prompts.task_template)
@@ -225,7 +236,7 @@ while round_count < configs["MAX_ROUNDS"]:
         res = res[:-1]
         if act_name == "tap":
             _, area = res
-            tl, br = elem_list[area - 1].bbox
+            tl, br = elem_list[int(area) - 1].bbox
             x, y = (tl[0] + br[0]) // 2, (tl[1] + br[1]) // 2
             ret = controller.tap(x, y)
             if ret == "ERROR":
@@ -239,7 +250,7 @@ while round_count < configs["MAX_ROUNDS"]:
                 break
         elif act_name == "long_press":
             _, area = res
-            tl, br = elem_list[area - 1].bbox
+            tl, br = elem_list[int(area) - 1].bbox
             x, y = (tl[0] + br[0]) // 2, (tl[1] + br[1]) // 2
             ret = controller.long_press(x, y)
             if ret == "ERROR":
@@ -247,7 +258,7 @@ while round_count < configs["MAX_ROUNDS"]:
                 break
         elif act_name == "swipe":
             _, area, swipe_dir, dist = res
-            tl, br = elem_list[area - 1].bbox
+            tl, br = elem_list[int(area) - 1].bbox
             x, y = (tl[0] + br[0]) // 2, (tl[1] + br[1]) // 2
             ret = controller.swipe(x, y, swipe_dir, dist)
             if ret == "ERROR":
@@ -278,14 +289,15 @@ while round_count < configs["MAX_ROUNDS"]:
                 break
         if act_name != "grid":
             grid_on = False
-        time.sleep(configs["REQUEST_INTERVAL"])
+        print_with_color(f"Waiting for {configs['REQUEST_INTERVAL']} seconds before the next round...", "yellow")
+        time.sleep(float(configs["REQUEST_INTERVAL"]))
     else:
         print_with_color(rsp, "red")
         break
 
 if task_complete:
     print_with_color("Task completed successfully", "yellow")
-elif round_count == configs["MAX_ROUNDS"]:
+elif round_count == int(configs["MAX_ROUNDS"]):
     print_with_color("Task finished due to reaching max rounds", "yellow")
 else:
     print_with_color("Task finished unexpectedly", "red")

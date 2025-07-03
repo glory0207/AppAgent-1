@@ -1,12 +1,12 @@
 import re
 from abc import abstractmethod
-from typing import List
+from typing import List, Tuple, Optional
 from http import HTTPStatus
 
 import requests
 import dashscope
 
-from utils import print_with_color, encode_image
+from scripts.utils import print_with_color, encode_image
 
 
 class BaseModel:
@@ -14,20 +14,22 @@ class BaseModel:
         pass
 
     @abstractmethod
-    def get_model_response(self, prompt: str, images: List[str]) -> (bool, str):
+    def get_model_response(self, prompt: str, images: List[str]) -> Tuple[bool, str]:
         pass
 
 
 class OpenAIModel(BaseModel):
-    def __init__(self, base_url: str, api_key: str, model: str, temperature: float, max_tokens: int):
+    def __init__(self, base_url: str, api_key: str, model: str, temperature: float, max_tokens: int, user_id: Optional[str] = None, api_version: Optional[str] = None):
         super().__init__()
         self.base_url = base_url
         self.api_key = api_key
         self.model = model
         self.temperature = temperature
         self.max_tokens = max_tokens
+        self.user_id = user_id
+        self.api_version = api_version
 
-    def get_model_response(self, prompt: str, images: List[str]) -> (bool, str):
+    def get_model_response(self, prompt: str, images: List[str]) -> Tuple[bool, str]:
         content = [
             {
                 "type": "text",
@@ -46,6 +48,14 @@ class OpenAIModel(BaseModel):
             "Content-Type": "application/json",
             "Authorization": f"Bearer {self.api_key}"
         }
+        
+        # 添加用户ID和API版本到请求头（如果提供）
+        if self.user_id:
+            headers["X-User-Id"] = self.user_id
+        
+        if self.api_version:
+            headers["X-API-Version"] = self.api_version
+            
         payload = {
             "model": self.model,
             "messages": [
@@ -57,17 +67,60 @@ class OpenAIModel(BaseModel):
             "temperature": self.temperature,
             "max_tokens": self.max_tokens
         }
-        response = requests.post(self.base_url, headers=headers, json=payload).json()
-        if "error" not in response:
-            usage = response["usage"]
-            prompt_tokens = usage["prompt_tokens"]
-            completion_tokens = usage["completion_tokens"]
-            print_with_color(f"Request cost is "
-                             f"${'{0:.2f}'.format(prompt_tokens / 1000 * 0.01 + completion_tokens / 1000 * 0.03)}",
-                             "yellow")
-        else:
-            return False, response["error"]["message"]
-        return True, response["choices"][0]["message"]["content"]
+        
+        try:
+            print_with_color(f"发送请求到: {self.base_url}", "blue")
+            print_with_color(f"使用模型: {self.model}", "blue")
+            
+            response = requests.post(self.base_url, headers=headers, json=payload)
+            
+            # 打印HTTP状态码
+            print_with_color(f"HTTP状态码: {response.status_code}", "yellow")
+            
+            # 尝试解析JSON响应
+            try:
+                response_json = response.json()
+            except Exception as e:
+                print_with_color(f"无法解析JSON响应: {str(e)}", "red")
+                print_with_color(f"原始响应: {response.text}", "red")
+                return False, f"API响应解析失败: {str(e)}"
+            
+            # 检查是否有错误
+            if "error" in response_json:
+                error_message = response_json["error"].get("message", "未知错误")
+                print_with_color(f"API返回错误: {error_message}", "red")
+                return False, error_message
+            
+            # 检查并处理usage信息
+            if "usage" in response_json:
+                usage = response_json["usage"]
+                prompt_tokens = usage.get("prompt_tokens", 0)
+                completion_tokens = usage.get("completion_tokens", 0)
+                print_with_color(f"Request cost is "
+                                f"${'{0:.2f}'.format(prompt_tokens / 1000 * 0.01 + completion_tokens / 1000 * 0.03)}",
+                                "yellow")
+            else:
+                print_with_color("API响应中没有usage信息", "yellow")
+            
+            # 检查并处理choices信息
+            if "choices" in response_json and len(response_json["choices"]) > 0:
+                choice = response_json["choices"][0]
+                if "message" in choice and "content" in choice["message"]:
+                    return True, choice["message"]["content"]
+                else:
+                    print_with_color("API响应中choices格式不正确", "red")
+                    print_with_color(f"Choice内容: {choice}", "yellow")
+                    return False, "API响应格式错误: choices中缺少message或content"
+            else:
+                print_with_color("API响应中没有choices信息或choices为空", "red")
+                print_with_color(f"API响应内容: {response_json}", "yellow")
+                return False, "API响应格式错误: 缺少choices字段"
+                
+        except Exception as e:
+            import traceback
+            print_with_color(f"API请求异常: {str(e)}", "red")
+            traceback.print_exc()
+            return False, f"API请求异常: {str(e)}"
 
 
 class QwenModel(BaseModel):
@@ -75,27 +128,57 @@ class QwenModel(BaseModel):
         super().__init__()
         self.model = model
         dashscope.api_key = api_key
+        print_with_color(f"初始化Qwen模型: {model}", "blue")
+        # 检查API密钥是否有效
+        if not api_key or api_key.startswith("sk-") and len(api_key) < 10:
+            print_with_color("⚠️ 警告: API密钥可能无效", "yellow")
 
     def get_model_response(self, prompt: str, images: List[str]) -> (bool, str):
-        content = [{
-            "text": prompt
-        }]
-        for img in images:
-            img_path = f"file://{img}"
-            content.append({
-                "image": img_path
-            })
-        messages = [
-            {
-                "role": "user",
-                "content": content
-            }
-        ]
-        response = dashscope.MultiModalConversation.call(model=self.model, messages=messages)
-        if response.status_code == HTTPStatus.OK:
-            return True, response.output.choices[0].message.content[0]["text"]
-        else:
-            return False, response.message
+        try:
+            print_with_color(f"准备调用Qwen模型，提示词长度: {len(prompt)}", "blue")
+            print_with_color(f"图像数量: {len(images)}", "blue")
+            
+            content = [{
+                "text": prompt
+            }]
+            
+            for img in images:
+                print_with_color(f"处理图像: {img}", "blue")
+                img_path = f"file://{img}"
+                content.append({
+                    "image": img_path
+                })
+                
+            messages = [
+                {
+                    "role": "user",
+                    "content": content
+                }
+            ]
+            
+            print_with_color("发送请求到Qwen API...", "blue")
+            response = dashscope.MultiModalConversation.call(model=self.model, messages=messages)
+            
+            if response.status_code == HTTPStatus.OK:
+                print_with_color("Qwen API请求成功", "green")
+                try:
+                    result_text = response.output.choices[0].message.content[0]["text"]
+                    print_with_color(f"响应长度: {len(result_text)}", "blue")
+                    return True, result_text
+                except Exception as e:
+                    print_with_color(f"解析响应失败: {str(e)}", "red")
+                    print_with_color(f"响应内容: {response}", "yellow")
+                    return False, f"解析响应失败: {str(e)}"
+            else:
+                print_with_color(f"Qwen API请求失败，状态码: {response.status_code}", "red")
+                print_with_color(f"错误信息: {response.message}", "red")
+                return False, f"API请求失败: {response.message}"
+                
+        except Exception as e:
+            import traceback
+            print_with_color(f"调用Qwen模型时发生异常: {str(e)}", "red")
+            traceback.print_exc()
+            return False, f"模型调用异常: {str(e)}"
 
 
 def parse_explore_rsp(rsp):

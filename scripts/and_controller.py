@@ -2,8 +2,8 @@ import os
 import subprocess
 import xml.etree.ElementTree as ET
 
-from config import load_config
-from utils import print_with_color
+from scripts.config import load_config
+from scripts.utils import print_with_color
 
 
 configs = load_config()
