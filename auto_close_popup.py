@@ -10,6 +10,7 @@ import cv2
 import numpy as np
 import traceback
 import time
+import re
 from typing import Dict, Tuple, Optional, List
 
 # 添加当前目录到Python路径
@@ -286,7 +287,7 @@ def analyze_popup_smart(image_path: str, popup_region: Optional[Dict]) -> Option
 
 
 def auto_close_ad_popup(popup_analysis: Dict, controller: AndroidController) -> bool:
-    """自动关闭广告弹窗"""
+    """自动关闭广告弹窗并验证结果"""
     try:
         print_with_color("执行广告弹窗关闭操作", "cyan")
         
@@ -303,20 +304,39 @@ def auto_close_ad_popup(popup_analysis: Dict, controller: AndroidController) -> 
         # 执行点击
         result = controller.tap(x, y)
         
-        if result == "SUCCESS":
-            print_with_color("关闭按钮点击成功", "green")
+        if result != "SUCCESS":
+            print_with_color(f"点击操作失败: {result}", "red")
+            return False
+        
+        print_with_color("点击操作成功，正在验证结果...", "green")
+        
+        # 等待界面响应
+        time.sleep(2)
+        
+        # 获取操作后截图进行验证
+        after_image = controller.get_screenshot("after_close_ad", "./temp")
+        if after_image == "ERROR":
+            print_with_color("无法获取验证截图", "red")
+            return False
+        
+        # 验证弹窗是否真的被关闭
+        success = verify_popup_closed(after_image, popup_analysis, "广告弹窗关闭")
+        
+        if success:
+            print_with_color("✓ 验证成功：广告弹窗已被关闭", "green")
             return True
         else:
-            print_with_color(f"点击失败: {result}", "red")
+            print_with_color("✗ 验证失败：广告弹窗可能仍然存在", "red")
             return False
         
     except Exception as e:
         print_with_color(f"关闭广告弹窗失败: {str(e)}", "red")
+        traceback.print_exc()
         return False
 
 
 def auto_accept_agreement(popup_analysis: Dict, controller: AndroidController) -> bool:
-    """自动接受协议弹窗"""
+    """自动接受协议弹窗并验证结果"""
     try:
         print_with_color("执行协议弹窗同意操作", "cyan")
         
@@ -333,15 +353,34 @@ def auto_accept_agreement(popup_analysis: Dict, controller: AndroidController) -
         # 执行点击
         result = controller.tap(x, y)
         
-        if result == "SUCCESS":
-            print_with_color("同意按钮点击成功", "green")
+        if result != "SUCCESS":
+            print_with_color(f"点击操作失败: {result}", "red")
+            return False
+        
+        print_with_color("点击操作成功，正在验证结果...", "green")
+        
+        # 等待界面响应
+        time.sleep(2)
+        
+        # 获取操作后截图进行验证
+        after_image = controller.get_screenshot("after_accept_agreement", "./temp")
+        if after_image == "ERROR":
+            print_with_color("无法获取验证截图", "red")
+            return False
+        
+        # 验证弹窗是否真的被处理
+        success = verify_popup_closed(after_image, popup_analysis, "协议弹窗同意")
+        
+        if success:
+            print_with_color("✓ 验证成功：协议弹窗已被处理", "green")
             return True
         else:
-            print_with_color(f"点击失败: {result}", "red")
+            print_with_color("✗ 验证失败：协议弹窗可能仍然存在", "red")
             return False
         
     except Exception as e:
         print_with_color(f"接受协议失败: {str(e)}", "red")
+        traceback.print_exc()
         return False
 
 
@@ -394,6 +433,114 @@ def verify_popup_closed(controller: AndroidController):
         
     except Exception as e:
         print_with_color(f"验证弹窗状态时出错: {str(e)}", "yellow")
+
+
+def verify_popup_closed(after_image_path: str, original_popup_analysis: Dict, operation_type: str) -> bool:
+    """验证弹窗是否已被成功关闭（专用于auto_close_popup.py）"""
+    try:
+        # 加载配置和模型
+        config = load_config()
+        
+        if config["MODEL"] == "OpenAI":
+            model = OpenAIModel(
+                base_url=config["OPENAI_BASE_URL"],
+                api_key=config["OPENAI_API_KEY"],
+                model=config["OPENAI_MODEL"],
+                temperature=0.0,
+                max_tokens=500
+            )
+        else:
+            model = QwenModel(
+                api_key=config["DASHSCOPE_API_KEY"],
+                model=config["QWEN_MODEL"]
+            )
+        
+        # 构建验证提示词
+        popup_type = original_popup_analysis.get('type', '未知')
+        action_button = original_popup_analysis.get('action_button', {})
+        button_text = action_button.get('text', '未知按钮')
+        
+        verification_prompt = f"""
+请分析这张移动应用截图，判断弹窗操作是否成功。
+
+操作背景：
+- 弹窗类型：{popup_type}
+- 执行的操作：{operation_type}
+- 点击的按钮：{button_text}
+
+请仔细观察当前截图，判断：
+1. 之前的弹窗是否已经消失？
+2. 界面是否已经回到正常的应用界面？
+3. 是否有新的弹窗出现？
+
+请用以下格式简洁回答：
+
+弹窗状态：[已消失/仍存在/出现新弹窗]
+操作结果：[成功/失败]
+界面状态：[简要描述当前界面]
+备注：[如果失败，说明可能的原因]
+
+判断标准：
+- 如果原弹窗完全消失且界面正常，则为"成功"
+- 如果原弹窗仍然存在或出现新弹窗，则为"失败"
+"""
+        
+        print_with_color("AI正在验证操作结果...", "yellow")
+        success, response = model.get_model_response(verification_prompt, [after_image_path])
+        
+        if not success:
+            print_with_color(f"AI验证失败: {response}", "red")
+            return False
+        
+        print_with_color("AI验证结果:", "cyan")
+        print_with_color(response, "white")
+        
+        # 解析验证结果
+        verification_result = parse_verification_result(response)
+        
+        return verification_result
+        
+    except Exception as e:
+        print_with_color(f"验证弹窗关闭失败: {str(e)}", "red")
+        traceback.print_exc()
+        return False
+
+
+def parse_verification_result(response: str) -> bool:
+    """解析验证响应，返回是否成功"""
+    try:
+        # 查找操作结果
+        result_match = re.search(r'操作结果[：:]\s*([^\n]+)', response)
+        if result_match:
+            result = result_match.group(1).strip()
+            print_with_color(f"解析操作结果: {result}", "blue")
+            
+            if "成功" in result:
+                return True
+            elif "失败" in result:
+                return False
+        
+        # 备用判断：查找弹窗状态
+        status_match = re.search(r'弹窗状态[：:]\s*([^\n]+)', response)
+        if status_match:
+            status = status_match.group(1).strip()
+            print_with_color(f"弹窗状态: {status}", "blue")
+            
+            if "已消失" in status:
+                return True
+            elif "仍存在" in status or "新弹窗" in status:
+                return False
+        
+        # 关键词判断
+        if "成功" in response or "已消失" in response or "消失" in response:
+            if "失败" not in response and "仍存在" not in response and "新弹窗" not in response:
+                return True
+        
+        return False
+        
+    except Exception as e:
+        print_with_color(f"解析验证响应失败: {str(e)}", "red")
+        return False
 
 
 def main():
