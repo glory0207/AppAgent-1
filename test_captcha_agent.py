@@ -31,7 +31,7 @@ def main():
     
     args = parser.parse_args()
     
-    print_with_color("🧪 验证码Agent测试工具", "cyan")
+    print_with_color("验证码Agent测试工具", "cyan")
     print_with_color("="*50, "yellow")
     
     # 初始化Agent管理器
@@ -41,7 +41,7 @@ def main():
     # 设置Android设备
     controller = setup_android_device()
     if not controller:
-        print_with_color("❌ 无法连接Android设备，程序退出", "red")
+        print_with_color("无法连接Android设备，程序退出", "red")
         return
     
     agent_manager.set_controller(controller)
@@ -58,19 +58,19 @@ def main():
 
 def setup_android_device() -> Optional[AndroidController]:
     """设置Android设备"""
-    print_with_color("🔍 查找Android设备...", "yellow")
+    print_with_color("查找Android设备...", "yellow")
     
     device_list = list_all_devices()
     if not device_list:
-        print_with_color("❌ 未找到Android设备！", "red")
+        print_with_color("未找到Android设备！", "red")
         return None
     
-    print_with_color(f"📱 发现设备: {device_list}", "green")
+    print_with_color(f"发现设备: {device_list}", "green")
     
     # 选择设备
     if len(device_list) == 1:
         device = device_list[0]
-        print_with_color(f"✅ 自动选择设备: {device}", "green")
+        print_with_color(f"自动选择设备: {device}", "green")
     else:
         print_with_color("请选择设备:", "blue")
         for i, dev in enumerate(device_list):
@@ -92,16 +92,16 @@ def setup_android_device() -> Optional[AndroidController]:
     width, height = controller.get_device_size()
     
     if not width or not height:
-        print_with_color("❌ 无法获取设备屏幕尺寸", "red")
+        print_with_color("无法获取设备屏幕尺寸", "red")
         return None
     
-    print_with_color(f"📐 设备屏幕尺寸: {width}x{height}", "green")
+    print_with_color(f"设备屏幕尺寸: {width}x{height}", "green")
     return controller
 
 
 def test_captcha_type(agent_manager, app_name, captcha_type):
     """测试特定类型的验证码"""
-    print_with_color(f"\n🧪 测试 {captcha_type} 类型验证码", "cyan")
+    print_with_color(f"\n测试 {captcha_type} 类型验证码", "cyan")
     
     # 构建任务描述
     task_desc = f"识别并处理{app_name}中的"
@@ -132,35 +132,36 @@ def test_captcha_type(agent_manager, app_name, captcha_type):
     end_time = time.time()
     
     # 显示结果
-    print_with_color("\n📊 测试结果:", "cyan")
+    print_with_color("\n测试结果:", "cyan")
     print_with_color(f"耗时: {end_time - start_time:.2f}秒", "yellow")
     
     if result.success:
-        print_with_color(f"✅ 成功: {result.message}", "green")
+        print_with_color(f"成功: {result.message}", "green")
         if result.data:
             print_with_color(f"数据: {result.data}", "cyan")
         if result.actions_taken:
             print_with_color(f"执行操作: {result.actions_taken}", "cyan")
     else:
-        print_with_color(f"❌ 失败: {result.message}", "red")
+        print_with_color(f"失败: {result.message}", "red")
     
     # 请求用户评估
-    print_with_color("\n👤 请评估验证码处理结果:", "yellow")
+    print_with_color("\n请评估验证码处理结果:", "yellow")
     print_with_color("1. 完全正确", "green")
     print_with_color("2. 部分正确", "yellow")
     print_with_color("3. 完全错误", "red")
     
     while True:
         try:
-            rating = int(input("请输入评分(1-3): "))
+            rating = int(input("请输入评分 (1-3): "))
             if 1 <= rating <= 3:
                 break
             else:
-                print_with_color("无效评分，请输入1-3", "red")
+                print_with_color("请输入1-3之间的数字", "red")
         except ValueError:
             print_with_color("请输入有效数字", "red")
     
-    feedback = input("请提供具体反馈(可选): ")
+    # 获取用户反馈
+    feedback = input("请输入详细反馈 (可选): ").strip()
     
     # 保存测试结果
     save_test_result(app_name, captcha_type, result, rating, feedback)
@@ -174,7 +175,7 @@ def test_all_captcha_types(agent_manager, app_name):
     results = {}
     
     for captcha_type in captcha_types:
-        print_with_color(f"\n🧪 测试 {captcha_type} 类型验证码", "cyan")
+        print_with_color(f"\n测试 {captcha_type} 类型验证码", "cyan")
         input(f"请将手机屏幕导航到 {captcha_type} 验证码界面，然后按Enter继续...")
         
         rating = test_captcha_type(agent_manager, app_name, captcha_type)
@@ -184,9 +185,9 @@ def test_all_captcha_types(agent_manager, app_name):
             input("按Enter继续下一个测试...")
     
     # 显示总结
-    print_with_color("\n📊 测试总结:", "cyan")
+    print_with_color("\n测试总结:", "cyan")
     for captcha_type, rating in results.items():
-        status = "✅ 成功" if rating == 1 else "⚠️ 部分成功" if rating == 2 else "❌ 失败"
+        status = "成功" if rating == 1 else "部分成功" if rating == 2 else "失败"
         print_with_color(f"{captcha_type}: {status}", "yellow")
 
 
@@ -216,7 +217,7 @@ def save_test_result(app_name, captcha_type, result, rating, feedback):
 
 def optimize_prompts(test_results_dir="./test_results"):
     """根据测试结果优化提示词"""
-    print_with_color("\n🔧 开始优化提示词...", "cyan")
+    print_with_color("\n开始优化提示词...", "cyan")
     
     # 这里可以实现基于测试结果的提示词优化逻辑
     # 例如：分析成功率低的验证码类型，调整相应的提示词

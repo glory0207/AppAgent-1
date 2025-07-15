@@ -131,7 +131,7 @@ class QwenModel(BaseModel):
         print_with_color(f"初始化Qwen模型: {model}", "blue")
         # 检查API密钥是否有效
         if not api_key or api_key.startswith("sk-") and len(api_key) < 10:
-            print_with_color("⚠️ 警告: API密钥可能无效", "yellow")
+            print_with_color("警告: API密钥可能无效", "yellow")
 
     def get_model_response(self, prompt: str, images: List[str]) -> (bool, str):
         try:

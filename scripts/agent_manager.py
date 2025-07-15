@@ -33,9 +33,9 @@ class AgentManager:
                 agent_class = getattr(module, class_name)
                 agent = agent_class(self.config_path)
                 self.agents[agent.agent_name] = agent
-                print_with_color(f"✅ 成功加载Agent: {agent.agent_name}", "green")
+                print_with_color(f"成功加载Agent: {agent.agent_name}", "green")
             except Exception as e:
-                print_with_color(f"❌ 无法导入Agent模块 {module_name}: {str(e)}", "red")
+                print_with_color(f"无法导入Agent模块 {module_name}: {str(e)}", "red")
     
     def set_controller(self, controller: AndroidController):
         """设置Android控制器"""

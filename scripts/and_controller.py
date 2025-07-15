@@ -17,7 +17,7 @@ class AndroidElement:
 
 
 def execute_adb(adb_command):
-    # print(adb_command)
+    print_with_color(f"执行ADB命令: {adb_command}", "blue")  # 恢复打印命令
     result = subprocess.run(adb_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     if result.returncode == 0:
         return result.stdout.strip()
@@ -172,9 +172,39 @@ class AndroidController:
         ret = execute_adb(adb_command)
         return ret
 
-    def swipe_precise(self, start, end, duration=400):
+    def swipe_precise(self, start, end, duration=2000):
         start_x, start_y = start
         end_x, end_y = end
-        adb_command = f"adb -s {self.device} shell input swipe {start_x} {start_x} {end_x} {end_y} {duration}"
+        adb_command = f"adb -s {self.device} shell input swipe {start_x} {start_y} {end_x} {end_y} {duration}"
         ret = execute_adb(adb_command)
         return ret
+
+    def swipe_human_like(self, start, end, total_duration=2500):
+        """
+        模拟人类滑动行为的连续慢速滑动
+        使用单次连续滑动，不分段，避免松开滑块
+        """
+        import random
+        
+        start_x, start_y = start
+        end_x, end_y = end
+        
+        print_with_color(f"人性化滑动开始: 从 ({start_x}, {start_y}) 到 ({end_x}, {end_y})", "green")
+        print_with_color(f"滑动时长: {total_duration}ms", "green")
+        
+        # 添加轻微的随机偏移，模拟人类手指不完全精准
+        offset_x = random.randint(-3, 3)
+        offset_y = random.randint(-2, 2)
+        
+        final_end_x = end_x + offset_x
+        final_end_y = end_y + offset_y
+        
+        print_with_color(f"添加随机偏移: ({offset_x}, {offset_y})", "cyan")
+        print_with_color(f"最终目标位置: ({final_end_x}, {final_end_y})", "cyan")
+        
+        # 使用单次连续滑动，时间较长以模拟慢速拖动
+        adb_command = f"adb -s {self.device} shell input swipe {start_x} {start_y} {final_end_x} {final_end_y} {total_duration}"
+        ret = execute_adb(adb_command)
+        
+        print_with_color(f"滑动命令执行结果: {ret}", "yellow")
+        return "SUCCESS" if ret != "ERROR" else "ERROR"
