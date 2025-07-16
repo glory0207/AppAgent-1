@@ -123,20 +123,8 @@ def main():
     print(f"   总耗时: {result['total_time']}")
     print("="*50)
 
-# 简单测试函数
-# def test_image(image_path):
-#     """测试单张图片 - 最简单的调用方式"""
-#     result = find_button(image_path)
-    
-#     if result["found"]:
-#         return result["center"]["x"], result["center"]["y"], result["keyword"]
-#     else:
-#         return None, None, None
 
 if __name__ == "__main__":
     main()
     
-    # 如果你想直接在代码中调用，可以这样：
-    # x, y, keyword = test_image("screenshot.png")
-    # if x is not None:
-    #     print(f"找到 {keyword} 按钮: ({x}, {y})")
+   
