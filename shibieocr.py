@@ -22,7 +22,7 @@ from collections import OrderedDict
 def detect_close_button_by_shape(image_path):
     """
     通过形状识别关闭按钮（×号）
-    改进版：支持不同位置和样式
+    改进版：支持不同位置和样式，提高准确性
     """
     try:
         # 读取图片
@@ -33,14 +33,14 @@ def detect_close_button_by_shape(image_path):
         # 转换为灰度图
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         
-        # 方法1：检测圆形关闭按钮（右上角）
+        # 方法1：检测圆形关闭按钮（右上角）- 提高检测精度
         circles = cv2.HoughCircles(
             gray,
             cv2.HOUGH_GRADIENT,
             dp=1,
             minDist=30,
             param1=50,
-            param2=30,
+            param2=40,  # 提高阈值，减少误检测
             minRadius=15,
             maxRadius=50
         )
@@ -49,8 +49,8 @@ def detect_close_button_by_shape(image_path):
             circles = np.round(circles[0, :]).astype("int")
             
             for (x, y, r) in circles:
-                # 检查是否在右上角区域
-                if x > img.shape[1] * 0.7 and y < img.shape[0] * 0.3:
+                # 检查是否在右上角区域 - 更严格的位置要求
+                if x > img.shape[1] * 0.75 and y < img.shape[0] * 0.25:
                     return {
                         "found": True,
                         "center": {"x": x, "y": y},
@@ -58,7 +58,7 @@ def detect_close_button_by_shape(image_path):
                         "type": "circular_close_button"
                     }
         
-        # 方法2：检测角落的×号（左上角或右上角）
+        # 方法2：检测角落的×号（左上角或右上角）- 提高精度
         # 边缘检测
         edges = cv2.Canny(gray, 50, 150)
         
@@ -68,14 +68,14 @@ def detect_close_button_by_shape(image_path):
         for contour in contours:
             # 计算轮廓面积和边界框
             area = cv2.contourArea(contour)
-            if 50 < area < 1000:  # 合适的面积范围
+            if 100 < area < 800:  # 更严格的面积范围
                 x, y, w, h = cv2.boundingRect(contour)
                 
-                # 检查是否在角落区域（左上角或右上角）
-                in_top_left = x < img.shape[1] * 0.1 and y < img.shape[0] * 0.1
-                in_top_right = x > img.shape[1] * 0.8 and y < img.shape[0] * 0.1
+                # 检查是否在角落区域（左上角或右上角）- 更严格的位置要求
+                in_top_left = x < img.shape[1] * 0.08 and y < img.shape[0] * 0.08
+                in_top_right = x > img.shape[1] * 0.85 and y < img.shape[0] * 0.08
                 
-                if (in_top_left or in_top_right) and abs(w - h) < min(w, h) * 0.5:  # 近似正方形
+                if (in_top_left or in_top_right) and abs(w - h) < min(w, h) * 0.3:  # 更严格的正方形要求
                     center_x = x + w // 2
                     center_y = y + h // 2
                     
@@ -95,6 +95,7 @@ def detect_close_button_by_shape(image_path):
 def detect_close_button_by_template(image_path):
     """
     通过模板匹配识别×号关闭按钮
+    提高准确性，减少误识别
     """
     try:
         # 读取图片
@@ -130,18 +131,23 @@ def detect_close_button_by_template(image_path):
         # 找到最佳匹配
         best_result = max(results, key=lambda x: x['max_val'])
         
-        # 如果匹配度足够高
-        if best_result['max_val'] > 0.3:  # 进一步降低阈值
+        # 提高匹配阈值，减少误识别
+        if best_result['max_val'] > 0.5:  # 提高阈值从0.3到0.5
             x = best_result['location'][0] + best_result['template_size'] // 2
             y = best_result['location'][1] + best_result['template_size'] // 2
             
-            return {
-                "found": True,
-                "center": {"x": x, "y": y},
-                "confidence": best_result['max_val'],
-                "template_size": best_result['template_size'],
-                "type": "template_match"
-            }
+            # 额外检查：确保在合理的位置（角落区域）
+            h, w = gray.shape
+            in_corner = (x < w * 0.2 and y < h * 0.2) or (x > w * 0.8 and y < h * 0.2)
+            
+            if in_corner:
+                return {
+                    "found": True,
+                    "center": {"x": x, "y": y},
+                    "confidence": best_result['max_val'],
+                    "template_size": best_result['template_size'],
+                    "type": "template_match"
+                }
         
         return None
         
@@ -678,6 +684,7 @@ class OptimizedButtonFinder:
     def find_button(self, image_path):
         """
         优化版按钮查找函数 - 支持缓存 + 图标识别
+        修改执行顺序：优先OCR文字识别，图像识别作为备选
         """
         start_time = time.time()
         
@@ -724,9 +731,89 @@ class OptimizedButtonFinder:
                 return result
         
         cache_time = time.time() - cache_start
-        print(f" 缓存未命中 执行OCR识别")
+        print(f" 缓存未命中 执行完整识别")
         
-        # 3. 首先尝试图像识别关闭按钮（针对图标化的×号）
+        # 3. 优先进行OCR文字识别
+        ocr_start = time.time()
+        try:
+            results = self.reader.readtext(processed_img)
+        except Exception as e:
+            # 计算总耗时为各部分之和
+            calculated_total = preprocess_time + cache_time
+            
+            return {
+                "found": False,
+                "error": f"OCR识别失败: {str(e)}",
+                "preprocess_time": f"{preprocess_time:.3f}s",
+                "cache_time": f"{cache_time:.3f}s",
+                "total_time": f"{calculated_total:.3f}s"
+            }
+        
+        ocr_time = time.time() - ocr_start
+        
+        # 4. 检查OCR结果中是否有目标关键字
+        all_detected_texts = []
+        
+        if results:
+            for (bbox, text, confidence) in results:
+                # 置信度过滤 - 修复类型检查错误
+                try:
+                    conf_float = float(confidence) if isinstance(confidence, str) else confidence
+                    if conf_float > 0.5:
+                        all_detected_texts.append(f"{text}({conf_float:.2f})")
+                        
+                        # 检查是否包含目标关键字
+                        for keyword in self.keywords:
+                            if keyword in text:
+                                # 计算按钮中心坐标（原图尺寸）
+                                bbox = np.array(bbox)
+                                center_x = int(np.mean(bbox[:, 0]) * self.scale_factor)
+                                center_y = int(np.mean(bbox[:, 1]) * self.scale_factor)
+                                
+                                # 计算原图的边界框坐标
+                                original_bbox = (bbox * self.scale_factor).astype(int).tolist()
+                                
+                                # 计算总耗时为各部分之和
+                                calculated_total = preprocess_time + cache_time + ocr_time
+                                
+                                result = {
+                                    "found": True,
+                                    "keyword": keyword,
+                                    "full_text": text,
+                                    "center": {"x": center_x, "y": center_y},
+                                    "bbox": original_bbox,  # 原图坐标系的边界框
+                                    "confidence": round(conf_float, 3),
+                                    "detection_method": "ocr",
+                                    "cached": False,
+                                    "preprocess_time": f"{preprocess_time:.3f}s",
+                                    "cache_time": f"{cache_time:.3f}s",
+                                    "ocr_time": f"{ocr_time:.3f}s",
+                                    "shape_time": "0.000s",  # OCR识别时图像识别时间为0
+                                    "total_time": f"{calculated_total:.3f}s"
+                                }
+                                
+                                # 缓存成功结果（不包含时间信息）
+                                if image_hash:
+                                    # 创建不包含时间信息的缓存结果
+                                    cache_result = {
+                                        "found": True,
+                                        "keyword": keyword,
+                                        "full_text": text,
+                                        "center": {"x": center_x, "y": center_y},
+                                        "bbox": original_bbox,
+                                        "confidence": round(conf_float, 3),
+                                        "detection_method": "ocr",
+                                        "cached": False  # 原始结果标记为非缓存
+                                    }
+                                    self.add_to_cache(image_hash, cache_result)
+                                 
+                                
+                                return result
+                except (ValueError, TypeError):
+                    # 跳过无法转换的confidence值
+                    continue
+        
+        # 5. 如果OCR未找到关键字，再尝试图像识别关闭按钮（针对图标化的×号）
         shape_start = time.time()
         
         # 尝试多种图像识别方法
@@ -761,23 +848,25 @@ class OptimizedButtonFinder:
             if top_right_result and top_right_result["found"]:
                 image_detection_result = top_right_result
         
+        shape_time = time.time() - shape_start
+        
+        # 6. 如果图像识别找到了×号，返回结果（但标记为图像识别）
         if image_detection_result:
-            shape_time = time.time() - shape_start
-            calculated_total = preprocess_time + cache_time + shape_time
+            calculated_total = preprocess_time + cache_time + ocr_time + shape_time
             
             result = {
                 "found": True,
                 "keyword": "×",
                 "full_text": f"×({image_detection_result['type']})",
                 "center": image_detection_result["center"],
-                "confidence": image_detection_result.get("confidence", 0.9),
+                "confidence": image_detection_result.get("confidence", 0.8),  # 降低置信度，表示不如OCR准确
                 "detection_method": "image_recognition",
                 "detection_type": image_detection_result["type"],
                 "cached": False,
                 "preprocess_time": f"{preprocess_time:.3f}s",
                 "cache_time": f"{cache_time:.3f}s",
+                "ocr_time": f"{ocr_time:.3f}s",
                 "shape_time": f"{shape_time:.3f}s",
-                "ocr_time": "0.000s",
                 "total_time": f"{calculated_total:.3f}s"
             }
             
@@ -788,7 +877,7 @@ class OptimizedButtonFinder:
                     "keyword": "×",
                     "full_text": f"×({image_detection_result['type']})",
                     "center": image_detection_result["center"],
-                    "confidence": image_detection_result.get("confidence", 0.9),
+                    "confidence": image_detection_result.get("confidence", 0.8),
                     "detection_method": "image_recognition",
                     "detection_type": image_detection_result["type"],
                     "cached": False
@@ -797,116 +886,9 @@ class OptimizedButtonFinder:
             
             return result
         
-        shape_time = time.time() - shape_start
-        
-        # 4. OCR文字识别
-        ocr_start = time.time()
-        try:
-            results = self.reader.readtext(processed_img)
-        except Exception as e:
-            # 计算总耗时为各部分之和
-            calculated_total = preprocess_time + cache_time + shape_time
-            
-            return {
-                "found": False,
-                "error": f"OCR识别失败: {str(e)}",
-                "preprocess_time": f"{preprocess_time:.3f}s",
-                "cache_time": f"{cache_time:.3f}s",
-                "shape_time": f"{shape_time:.3f}s",
-                "total_time": f"{calculated_total:.3f}s"
-            }
-        
-        ocr_time = time.time() - ocr_start
-        
-        # 5. 检查是否有识别结果
-        if not results:
-            # 计算总耗时为各部分之和
-            calculated_total = preprocess_time + cache_time + shape_time + ocr_time
-            
-            result = {
-                "found": False,
-                "error": "未识别到任何文字",
-                "cached": False,
-                "preprocess_time": f"{preprocess_time:.3f}s",
-                "cache_time": f"{cache_time:.3f}s",
-                "shape_time": f"{shape_time:.3f}s",
-                "ocr_time": f"{ocr_time:.3f}s",
-                "total_time": f"{calculated_total:.3f}s"
-            }
-            # 缓存负结果（不包含时间信息）
-            if image_hash:
-                cache_result = {
-                    "found": False,
-                    "error": "未识别到任何文字",
-                    "cached": False
-                }
-                self.add_to_cache(image_hash, cache_result)
-            return result
-        
-        # 6. 查找目标按钮
-        all_detected_texts = []
-        
-        for (bbox, text, confidence) in results:
-            # 置信度过滤 - 修复类型检查错误
-            try:
-                conf_float = float(confidence) if isinstance(confidence, str) else confidence
-                if conf_float > 0.5:
-                    all_detected_texts.append(f"{text}({conf_float:.2f})")
-                    
-                    # 检查是否包含目标关键字
-                    for keyword in self.keywords:
-                        if keyword in text:
-                            # 计算按钮中心坐标（原图尺寸）
-                            bbox = np.array(bbox)
-                            center_x = int(np.mean(bbox[:, 0]) * self.scale_factor)
-                            center_y = int(np.mean(bbox[:, 1]) * self.scale_factor)
-                            
-                            # 计算原图的边界框坐标
-                            original_bbox = (bbox * self.scale_factor).astype(int).tolist()
-                            
-                            # 计算总耗时为各部分之和
-                            calculated_total = preprocess_time + cache_time + shape_time + ocr_time
-                            
-                            result = {
-                                "found": True,
-                                "keyword": keyword,
-                                "full_text": text,
-                                "center": {"x": center_x, "y": center_y},
-                                "bbox": original_bbox,  # 原图坐标系的边界框
-                                "confidence": round(conf_float, 3),
-                                "detection_method": "ocr",
-                                "cached": False,
-                                "preprocess_time": f"{preprocess_time:.3f}s",
-                                "cache_time": f"{cache_time:.3f}s",
-                                "shape_time": f"{shape_time:.3f}s",
-                                "ocr_time": f"{ocr_time:.3f}s",
-                                "total_time": f"{calculated_total:.3f}s"
-                            }
-                            
-                            # 缓存成功结果（不包含时间信息）
-                            if image_hash:
-                                # 创建不包含时间信息的缓存结果
-                                cache_result = {
-                                    "found": True,
-                                    "keyword": keyword,
-                                    "full_text": text,
-                                    "center": {"x": center_x, "y": center_y},
-                                    "bbox": original_bbox,
-                                    "confidence": round(conf_float, 3),
-                                    "detection_method": "ocr",
-                                    "cached": False  # 原始结果标记为非缓存
-                                }
-                                self.add_to_cache(image_hash, cache_result)
-                             
-                            
-                            return result
-            except (ValueError, TypeError):
-                # 跳过无法转换的confidence值
-                continue
-        
-        # 没有找到目标按钮
+        # 7. 没有找到目标按钮
         # 计算总耗时为各部分之和
-        calculated_total = preprocess_time + cache_time + shape_time + ocr_time
+        calculated_total = preprocess_time + cache_time + ocr_time + shape_time
         
         result = {
             "found": False,
@@ -915,8 +897,8 @@ class OptimizedButtonFinder:
             "cached": False,
             "preprocess_time": f"{preprocess_time:.3f}s",
             "cache_time": f"{cache_time:.3f}s",
-            "shape_time": f"{shape_time:.3f}s",
             "ocr_time": f"{ocr_time:.3f}s",
+            "shape_time": f"{shape_time:.3f}s",
             "total_time": f"{calculated_total:.3f}s"
         }
         
@@ -967,7 +949,7 @@ def find_button_optimized(image_path):
 
 def main():
     
-    image_path = "page/3.png"  
+    image_path = "page/23.png"  
     
     # 检查文件是否存在
     if not os.path.exists(image_path):
@@ -1089,7 +1071,7 @@ def verify_coordinates(image_path, x, y):
 if __name__ == "__main__":
   
     main()
-    verify_coordinates("page/3.png", 185, 586)
+    verify_coordinates("page/23.png",616, 130)
 
 # 缓存管理
 def cache_info():
