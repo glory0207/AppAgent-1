@@ -31,8 +31,8 @@ class OptimizedButtonFinder:
         print(f"模型加载完成，耗时: {load_time:.2f}s")
         
         # 目标关键字
-        self.keywords = ["关闭", "同意", "确定", "更新微信", "继续访问", "我知道了", 
-                        "同意并继续", "取消", "前往京东APP", "一键登录"]
+        self.keywords = ["关闭", "同意", "确定", "继续访问", "我知道了", 
+                        "同意并继续", "取消"]
         
         # 文字置信度阈值
         self.text_confidence_threshold = 0.6
