@@ -1,0 +1,3487 @@
+{
+  "process_info": {
+    "total_images": 202,
+    "success_count": 170,
+    "failed_count": 32,
+    "process_time": "2025-07-18 17:11:39",
+    "source": "文件夹: downloaded_images",
+    "output_directory": "annotated_images_20250718_170110",
+    "x_confidence_threshold": 0.6
+  },
+  "results": [
+    {
+      "index": 1,
+      "image_path": "downloaded_images\\0001_6358c7ce-62c2-11f0-82ba-7ea46962b89d_1752724747.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:01:14",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 527,
+        "y": 168
+      },
+      "confidence": 0.7777067422866821,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0001_6358c7ce-62c2-11f0-82ba-7ea46962b89d_1752724747.jpg",
+      "total_time": "3.673s"
+    },
+    {
+      "index": 2,
+      "image_path": "downloaded_images\\0002_159699c2-6294-11f0-bf46-2e7fda16dd90_1752704860.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:01:16",
+      "is_url": false,
+      "detected_texts": [
+        "承包你一年吃喝玩乐大礼(0.82)",
+        "你下单(0.75)",
+        "我买单(0.97)"
+      ],
+      "total_time": "1.616s"
+    },
+    {
+      "index": 3,
+      "image_path": "downloaded_images\\0003_34efe112-62f2-11f0-b202-2aa5a426da00_1752745285.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:01:17",
+      "is_url": false,
+      "detected_texts": [
+        "活动太火爆啦(0.65)",
+        "当前人数过多(0.83)",
+        "前往京东APP(0.97)"
+      ],
+      "total_time": "1.281s"
+    },
+    {
+      "index": 4,
+      "image_path": "downloaded_images\\0004_ab191112-62a5-11f0-96e7-fec5de89899d_1752712412.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:01:19",
+      "is_url": false,
+      "detected_texts": [
+        "有机会领取(0.87)",
+        "微信打款,实时到账(0.57)",
+        "下载提现(0.95)"
+      ],
+      "total_time": "2.283s"
+    },
+    {
+      "index": 5,
+      "image_path": "downloaded_images\\0005_096d3ce4-62af-11f0-b4f9-2e23588d2636_1752716436.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:01:21",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 281,
+        "y": 160
+      },
+      "confidence": 0.6632844805717468,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0005_096d3ce4-62af-11f0-b4f9-2e23588d2636_1752716436.jpg",
+      "total_time": "2.143s"
+    },
+    {
+      "index": 6,
+      "image_path": "downloaded_images\\0006_snapshot_20250717_092809073_ZG10654.jpeg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:01:23",
+      "is_url": false,
+      "detected_texts": [
+        "9;28(0.93)",
+        "努力加载中(0.97)"
+      ],
+      "total_time": "1.635s"
+    },
+    {
+      "index": 7,
+      "image_path": "downloaded_images\\0007_733440186454134784-1752701786805.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:01:25",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 856,
+        "y": 881
+      },
+      "confidence": 0.8852737545967102,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0007_733440186454134784-1752701786805.jpg",
+      "total_time": "1.882s"
+    },
+    {
+      "index": 8,
+      "image_path": "downloaded_images\\0008_snapshot_20250717_203202525_i_app_audit_0001.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:01:27",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 262,
+        "y": 1189
+      },
+      "confidence": 0.96,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0008_snapshot_20250717_203202525_i_app_audit_0001.jpg",
+      "total_time": "2.152s"
+    },
+    {
+      "index": 9,
+      "image_path": "downloaded_images\\0009_733572535743942656-1752713671456.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:01:29",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 24,
+        "y": 771
+      },
+      "confidence": 0.6297377347946167,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0009_733572535743942656-1752713671456.jpg",
+      "total_time": "1.912s"
+    },
+    {
+      "index": 10,
+      "image_path": "downloaded_images\\0010_snapshot_20250717_152616587_ZG10126.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:01:31",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 768,
+        "y": 228
+      },
+      "confidence": 0.8449908494949341,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0010_snapshot_20250717_152616587_ZG10126.jpg",
+      "total_time": "1.882s"
+    },
+    {
+      "index": 11,
+      "image_path": "downloaded_images\\0011_snapshot_20250717_211315572_i_app_audit_0001.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:01:33",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 259,
+        "y": 1189
+      },
+      "confidence": 0.918,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0011_snapshot_20250717_211315572_i_app_audit_0001.jpg",
+      "total_time": "2.262s"
+    },
+    {
+      "index": 12,
+      "image_path": "downloaded_images\\0012_snapshot_20250717_220310682_i_app_audit_0001.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:01:36",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 182,
+        "y": 1358
+      },
+      "confidence": 0.6250523924827576,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0012_snapshot_20250717_220310682_i_app_audit_0001.jpg",
+      "total_time": "2.654s"
+    },
+    {
+      "index": 13,
+      "image_path": "downloaded_images\\0013_733435993884987393-1752685318582.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:01:38",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 853,
+        "y": 872
+      },
+      "confidence": 0.8933149576187134,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0013_733435993884987393-1752685318582.jpg",
+      "total_time": "2.135s"
+    },
+    {
+      "index": 14,
+      "image_path": "downloaded_images\\0014_733439767606743040-1752701028064.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:01:41",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.7978591322898865,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0014_733439767606743040-1752701028064.jpg",
+      "total_time": "3.054s"
+    },
+    {
+      "index": 15,
+      "image_path": "downloaded_images\\0015_0a5474e4-6230-11f0-a03c-1ef7620be8c6_1752661891.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:01:43",
+      "is_url": false,
+      "detected_texts": [
+        "活动太火爆啦(0.97)",
+        "当前人数过多(0.96)",
+        "更多精彩请前往京东(0.94)",
+        "APP~(0.51)",
+        "前往京东APP(0.99)"
+      ],
+      "total_time": "1.945s"
+    },
+    {
+      "index": 16,
+      "image_path": "downloaded_images\\0016_227abd38-6246-11f0-ba9a-a614159c4a98_1752671381.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:01:46",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 316,
+        "y": 161
+      },
+      "confidence": 0.6784421801567078,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0016_227abd38-6246-11f0-ba9a-a614159c4a98_1752671381.jpg",
+      "total_time": "2.637s"
+    },
+    {
+      "index": 17,
+      "image_path": "downloaded_images\\0017_faff9802-620c-11f0-9ecf-0ef2ce9ae4e5_1752646833.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:01:48",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_middle)",
+      "coordinates": {
+        "x": 305,
+        "y": 1645
+      },
+      "confidence": 0.6736730337142944,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0017_faff9802-620c-11f0-9ecf-0ef2ce9ae4e5_1752646833.jpg",
+      "total_time": "1.382s"
+    },
+    {
+      "index": 18,
+      "image_path": "downloaded_images\\0018_691f318a-6203-11f0-8d82-92ac038e78c6_1752642723.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:01:50",
+      "is_url": false,
+      "detected_texts": [
+        "官方己补960.5元(0.55)",
+        "退出后补贴失效!(0.73)",
+        "LEGIN(0.62)",
+        "立即领取(0.92)"
+      ],
+      "total_time": "2.397s"
+    },
+    {
+      "index": 19,
+      "image_path": "downloaded_images\\0019_e0d9f9f0-61f7-11f0-b963-b27043ef9dcd_1752637770.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:01:52",
+      "is_url": false,
+      "detected_texts": [
+        "拼多多(0.67)",
+        "hello(0.94)"
+      ],
+      "total_time": "1.783s"
+    },
+    {
+      "index": 20,
+      "image_path": "downloaded_images\\0020_388408d6-61e3-11f0-a20c-eeee48273a0b_1752628898.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:01:56",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 626,
+        "y": 191
+      },
+      "confidence": 0.7604033350944519,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0020_388408d6-61e3-11f0-a20c-eeee48273a0b_1752628898.jpg",
+      "total_time": "4.497s"
+    },
+    {
+      "index": 21,
+      "image_path": "downloaded_images\\0021_7536aa28-620a-11f0-902a-1a637a41a153_1752645750.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:01:58",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 25,
+        "y": 2238
+      },
+      "confidence": 0.6891382336616516,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0021_7536aa28-620a-11f0-902a-1a637a41a153_1752645750.jpg",
+      "total_time": "2.093s"
+    },
+    {
+      "index": 22,
+      "image_path": "downloaded_images\\0022_02f89242-6231-11f0-9d06-4a47a1731a95_1752662309.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:02",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 625,
+        "y": 360
+      },
+      "confidence": 0.7018800973892212,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0022_02f89242-6231-11f0-9d06-4a47a1731a95_1752662309.jpg",
+      "total_time": "3.482s"
+    },
+    {
+      "index": 23,
+      "image_path": "downloaded_images\\0023_2027a294-6246-11f0-9f98-a65020cb236a_1752671377.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:02:06",
+      "is_url": false,
+      "detected_texts": [
+        "半2690(0.67)"
+      ],
+      "total_time": "4.308s"
+    },
+    {
+      "index": 24,
+      "image_path": "downloaded_images\\0024_snapshot_20250716_225328226_atb_302_1q2w3e.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:09",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 768,
+        "y": 228
+      },
+      "confidence": 0.8449904918670654,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0024_snapshot_20250716_225328226_atb_302_1q2w3e.jpg",
+      "total_time": "2.246s"
+    },
+    {
+      "index": 25,
+      "image_path": "downloaded_images\\0025_snapshot_20250716_134545835_ZG10176.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:12",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 116,
+        "y": 1742
+      },
+      "confidence": 0.6377381682395935,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0025_snapshot_20250716_134545835_ZG10176.jpg",
+      "total_time": "3.072s"
+    },
+    {
+      "index": 26,
+      "image_path": "downloaded_images\\0026_snapshot_20250716_000234442_ZG10649.jpeg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:02:14",
+      "is_url": false,
+      "detected_texts": [
+        "12:02(0.85)",
+        "Set0(0.66)",
+        "发起群聊(0.99)",
+        "腾讯新闻(0.77)",
+        "添加朋友(0.99)",
+        "扫一扫(0.71)",
+        "订阅号消息(0.96)",
+        "收付款(0.67)",
+        "微信团队(0.81)",
+        "加载中(0.94)"
+      ],
+      "total_time": "2.086s"
+    },
+    {
+      "index": 27,
+      "image_path": "downloaded_images\\0027_snapshot_20250716_162251832_ZG10653.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:16",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 262,
+        "y": 1193
+      },
+      "confidence": 0.95,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0027_snapshot_20250716_162251832_ZG10653.jpg",
+      "total_time": "1.859s"
+    },
+    {
+      "index": 28,
+      "image_path": "downloaded_images\\0028_733433228439089152-1752680818051.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:19",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 413,
+        "y": 5080
+      },
+      "confidence": 0.8432551026344299,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0028_733433228439089152-1752680818051.jpg",
+      "total_time": "3.034s"
+    },
+    {
+      "index": 29,
+      "image_path": "downloaded_images\\0029_snapshot_20250716_164241371_atb_410_1q2w3e.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:21",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 262,
+        "y": 1193
+      },
+      "confidence": 0.95,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0029_snapshot_20250716_164241371_atb_410_1q2w3e.jpg",
+      "total_time": "2.568s"
+    },
+    {
+      "index": 30,
+      "image_path": "downloaded_images\\0030_snapshot_20250716_174434110_tq_003.jpeg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:02:23",
+      "is_url": false,
+      "detected_texts": [
+        "5:44(0.80)"
+      ],
+      "total_time": "1.502s"
+    },
+    {
+      "index": 31,
+      "image_path": "downloaded_images\\0031_snapshot_20250716_033348237_atb_307_1q2w3e.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:25",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 262,
+        "y": 1193
+      },
+      "confidence": 0.95,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0031_snapshot_20250716_033348237_atb_307_1q2w3e.jpg",
+      "total_time": "1.548s"
+    },
+    {
+      "index": 32,
+      "image_path": "downloaded_images\\0033_733366294560780288-1752661696160.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:27",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 317,
+        "y": 1430
+      },
+      "confidence": 0.98,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0033_733366294560780288-1752661696160.jpg",
+      "total_time": "2.186s"
+    },
+    {
+      "index": 33,
+      "image_path": "downloaded_images\\0034_snapshot_20250716_221654385_i_app_audit_0005.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:29",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 768,
+        "y": 228
+      },
+      "confidence": 0.8459436893463135,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0034_snapshot_20250716_221654385_i_app_audit_0005.jpg",
+      "total_time": "1.730s"
+    },
+    {
+      "index": 34,
+      "image_path": "downloaded_images\\0035_733055778910375936-1752606636008.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:31",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 464,
+        "y": 4982
+      },
+      "confidence": 0.658970057964325,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0035_733055778910375936-1752606636008.jpg",
+      "total_time": "2.697s"
+    },
+    {
+      "index": 35,
+      "image_path": "downloaded_images\\0036_733093069536776192-1752608361705.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:35",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 578,
+        "y": 5227
+      },
+      "confidence": 0.6866169571876526,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0036_733093069536776192-1752608361705.jpg",
+      "total_time": "3.595s"
+    },
+    {
+      "index": 36,
+      "image_path": "downloaded_images\\0037_733220375287582720-1752621467033.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:38",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 668,
+        "y": 1905
+      },
+      "confidence": 0.6842133402824402,
+      "detection_method": "template_matching",
+      "screen": 2,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0037_733220375287582720-1752621467033.jpg",
+      "total_time": "2.735s"
+    },
+    {
+      "index": 37,
+      "image_path": "downloaded_images\\0038_733276049199874048-1752635801489.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:41",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 675,
+        "y": 2327
+      },
+      "confidence": 0.7647132277488708,
+      "detection_method": "template_matching",
+      "screen": 2,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0038_733276049199874048-1752635801489.jpg",
+      "total_time": "3.008s"
+    },
+    {
+      "index": 38,
+      "image_path": "downloaded_images\\0039_snapshot_20250716_125531637_ZG10760.jpeg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:02:43",
+      "is_url": false,
+      "detected_texts": [
+        "12;55(0.84)"
+      ],
+      "total_time": "1.489s"
+    },
+    {
+      "index": 39,
+      "image_path": "downloaded_images\\0040_733044669361573888-1752605662334.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:45",
+      "is_url": false,
+      "keyword": "取消",
+      "full_text": "取消",
+      "coordinates": {
+        "x": 558,
+        "y": 1331
+      },
+      "confidence": 0.976,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0040_733044669361573888-1752605662334.jpg",
+      "total_time": "2.445s"
+    },
+    {
+      "index": 40,
+      "image_path": "downloaded_images\\0041_snapshot_20250716_152503330_ZG10653.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:47",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 262,
+        "y": 1193
+      },
+      "confidence": 0.95,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0041_snapshot_20250716_152503330_ZG10653.jpg",
+      "total_time": "1.578s"
+    },
+    {
+      "index": 41,
+      "image_path": "downloaded_images\\0042_733264489668431872-1752632045484.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:50",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_middle)",
+      "coordinates": {
+        "x": 765,
+        "y": 4413
+      },
+      "confidence": 0.6609527468681335,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0042_733264489668431872-1752632045484.jpg",
+      "total_time": "2.816s"
+    },
+    {
+      "index": 42,
+      "image_path": "downloaded_images\\0043_snapshot_20250716_013047832_atb_301_1q2w3e.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:55",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 602,
+        "y": 1695
+      },
+      "confidence": 0.743,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0043_snapshot_20250716_013047832_atb_301_1q2w3e.jpg",
+      "total_time": "4.939s"
+    },
+    {
+      "index": 43,
+      "image_path": "downloaded_images\\0044_733253985787449344-1752629468968.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:02:58",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 578,
+        "y": 5227
+      },
+      "confidence": 0.6866169571876526,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0044_733253985787449344-1752629468968.jpg",
+      "total_time": "3.356s"
+    },
+    {
+      "index": 44,
+      "image_path": "downloaded_images\\0045_snapshot_20250716_041814298_ds_104.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:00",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 754,
+        "y": 123
+      },
+      "confidence": 0.92,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0045_snapshot_20250716_041814298_ds_104.jpg",
+      "total_time": "1.761s"
+    },
+    {
+      "index": 45,
+      "image_path": "downloaded_images\\0046_3688791e-612e-11f0-86ee-c63d75db082d_1752551155.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:03",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 131,
+        "y": 748
+      },
+      "confidence": 0.649626612663269,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0046_3688791e-612e-11f0-86ee-c63d75db082d_1752551155.jpg",
+      "total_time": "3.122s"
+    },
+    {
+      "index": 46,
+      "image_path": "downloaded_images\\0047_snapshot_20250715_083446404_ZG10646.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:06",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 755,
+        "y": 235
+      },
+      "confidence": 0.7759529948234558,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0047_snapshot_20250715_083446404_ZG10646.jpg",
+      "total_time": "2.499s"
+    },
+    {
+      "index": 47,
+      "image_path": "downloaded_images\\0048_732613395678511104-1752512419464.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:09",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 79,
+        "y": 4433
+      },
+      "confidence": 0.6742914915084839,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0048_732613395678511104-1752512419464.jpg",
+      "total_time": "2.902s"
+    },
+    {
+      "index": 48,
+      "image_path": "downloaded_images\\0049_732671975495446528-1752531523539.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:12",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 131,
+        "y": 6005
+      },
+      "confidence": 0.6570740938186646,
+      "detection_method": "template_matching",
+      "screen": 4,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0049_732671975495446528-1752531523539.jpg",
+      "total_time": "2.806s"
+    },
+    {
+      "index": 49,
+      "image_path": "downloaded_images\\0050_732678257939070976-1752534690365.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:14",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 642,
+        "y": 1294
+      },
+      "confidence": 0.6636184453964233,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0050_732678257939070976-1752534690365.jpg",
+      "total_time": "2.687s"
+    },
+    {
+      "index": 50,
+      "image_path": "downloaded_images\\0051_732958122737405952-1752569775426.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:17",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 562,
+        "y": 5797
+      },
+      "confidence": 0.6274067759513855,
+      "detection_method": "template_matching",
+      "screen": 4,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0051_732958122737405952-1752569775426.jpg",
+      "total_time": "2.923s"
+    },
+    {
+      "index": 51,
+      "image_path": "downloaded_images\\0052_snapshot_20250715_184518098_ZG10654.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:19",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 251,
+        "y": 1661
+      },
+      "confidence": 0.6177036166191101,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0052_snapshot_20250715_184518098_ZG10654.jpg",
+      "total_time": "1.690s"
+    },
+    {
+      "index": 52,
+      "image_path": "downloaded_images\\0053_732870976496873472-1752551983994.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:22",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 678,
+        "y": 2121
+      },
+      "confidence": 0.7015989422798157,
+      "detection_method": "template_matching",
+      "screen": 2,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0053_732870976496873472-1752551983994.jpg",
+      "total_time": "2.998s"
+    },
+    {
+      "index": 53,
+      "image_path": "downloaded_images\\0054_snapshot_20250715_210733092_ZG10654.jpeg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:03:24",
+      "is_url": false,
+      "detected_texts": [
+        "9;07(0.59)"
+      ],
+      "total_time": "1.464s"
+    },
+    {
+      "index": 54,
+      "image_path": "downloaded_images\\0055_732643724563730432-1752523406454.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:28",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 578,
+        "y": 5227
+      },
+      "confidence": 0.6866169571876526,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0055_732643724563730432-1752523406454.jpg",
+      "total_time": "3.625s"
+    },
+    {
+      "index": 55,
+      "image_path": "downloaded_images\\0056_snapshot_20250715_124809184_ZG10647.jpeg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:03:29",
+      "is_url": false,
+      "detected_texts": [
+        "12;48(0.94)",
+        "努力加载中(0.97)"
+      ],
+      "total_time": "1.637s"
+    },
+    {
+      "index": 56,
+      "image_path": "downloaded_images\\0057_snapshot_20250715_110002624_ZG10149.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:31",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 251,
+        "y": 1661
+      },
+      "confidence": 0.6177036166191101,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0057_snapshot_20250715_110002624_ZG10149.jpg",
+      "total_time": "1.832s"
+    },
+    {
+      "index": 57,
+      "image_path": "downloaded_images\\0058_snapshot_20250715_132511250_tq_004.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:36",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 602,
+        "y": 1695
+      },
+      "confidence": 0.745,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0058_snapshot_20250715_132511250_tq_004.jpg",
+      "total_time": "4.871s"
+    },
+    {
+      "index": 58,
+      "image_path": "downloaded_images\\0059_snapshot_20250715_024515028_i_app_audit_0002.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:41",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 412,
+        "y": 1494
+      },
+      "confidence": 0.653,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0059_snapshot_20250715_024515028_i_app_audit_0002.jpg",
+      "total_time": "4.854s"
+    },
+    {
+      "index": 59,
+      "image_path": "downloaded_images\\0060_snapshot_20250715_211417062_ZG10126.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:46",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 412,
+        "y": 1494
+      },
+      "confidence": 0.653,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0060_snapshot_20250715_211417062_ZG10126.jpg",
+      "total_time": "4.815s"
+    },
+    {
+      "index": 60,
+      "image_path": "downloaded_images\\0061_snapshot_20250715_171858238_ZG10126.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:48",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 262,
+        "y": 1193
+      },
+      "confidence": 0.95,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0061_snapshot_20250715_171858238_ZG10126.jpg",
+      "total_time": "2.048s"
+    },
+    {
+      "index": 61,
+      "image_path": "downloaded_images\\0062_snapshot_20250715_134518854_ZG10652.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:53",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 602,
+        "y": 1695
+      },
+      "confidence": 0.745,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0062_snapshot_20250715_134518854_ZG10652.jpg",
+      "total_time": "4.879s"
+    },
+    {
+      "index": 62,
+      "image_path": "downloaded_images\\0063_snapshot_20250715_113256193_ZG10652.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:03:55",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 262,
+        "y": 1193
+      },
+      "confidence": 0.95,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0063_snapshot_20250715_113256193_ZG10652.jpg",
+      "total_time": "2.351s"
+    },
+    {
+      "index": 63,
+      "image_path": "downloaded_images\\0064_snapshot_20250715_123409945_ZG20263.jpeg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:03:57",
+      "is_url": false,
+      "detected_texts": [
+        "12;34(0.68)"
+      ],
+      "total_time": "1.635s"
+    },
+    {
+      "index": 64,
+      "image_path": "downloaded_images\\0065_snapshot_20250715_123258099_ZG10652.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:00",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 182,
+        "y": 1358
+      },
+      "confidence": 0.6247743368148804,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0065_snapshot_20250715_123258099_ZG10652.jpg",
+      "total_time": "2.700s"
+    },
+    {
+      "index": 65,
+      "image_path": "downloaded_images\\0066_732983718609436672-1752580341869.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:03",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 42,
+        "y": 3907
+      },
+      "confidence": 0.7414595484733582,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0066_732983718609436672-1752580341869.jpg",
+      "total_time": "3.492s"
+    },
+    {
+      "index": 66,
+      "image_path": "downloaded_images\\0067_snapshot_20250715_162244784_i_app_audit_0007.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:05",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 259,
+        "y": 1189
+      },
+      "confidence": 0.918,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0067_snapshot_20250715_162244784_i_app_audit_0007.jpg",
+      "total_time": "1.736s"
+    },
+    {
+      "index": 67,
+      "image_path": "downloaded_images\\0068_snapshot_20250715_105950039_atb_306_1q2w3e.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:07",
+      "is_url": false,
+      "keyword": "我知道了",
+      "full_text": "我知道了",
+      "coordinates": {
+        "x": 409,
+        "y": 1001
+      },
+      "confidence": 0.915,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0068_snapshot_20250715_105950039_atb_306_1q2w3e.jpg",
+      "total_time": "1.769s"
+    },
+    {
+      "index": 68,
+      "image_path": "downloaded_images\\0069_732984650439995392-1752580790735.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:10",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 42,
+        "y": 5099
+      },
+      "confidence": 0.741256058216095,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0069_732984650439995392-1752580790735.jpg",
+      "total_time": "3.245s"
+    },
+    {
+      "index": 69,
+      "image_path": "downloaded_images\\0070_733010114260242432-1752592387968.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:14",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 619,
+        "y": 1894
+      },
+      "confidence": 0.654962956905365,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0070_733010114260242432-1752592387968.jpg",
+      "total_time": "3.648s"
+    },
+    {
+      "index": 70,
+      "image_path": "downloaded_images\\0071_snapshot_20250715_142824417_i_app_audit_0007.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:16",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 259,
+        "y": 1189
+      },
+      "confidence": 0.918,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0071_snapshot_20250715_142824417_i_app_audit_0007.jpg",
+      "total_time": "1.770s"
+    },
+    {
+      "index": 71,
+      "image_path": "downloaded_images\\0072_snapshot_20250715_002723734_ZG10652.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:21",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 412,
+        "y": 1494
+      },
+      "confidence": 0.653,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0072_snapshot_20250715_002723734_ZG10652.jpg",
+      "total_time": "4.943s"
+    },
+    {
+      "index": 72,
+      "image_path": "downloaded_images\\0073_snapshot_20250715_212452122_TKMB24100184.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:23",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 182,
+        "y": 1358
+      },
+      "confidence": 0.6250523924827576,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0073_snapshot_20250715_212452122_TKMB24100184.jpg",
+      "total_time": "2.663s"
+    },
+    {
+      "index": 73,
+      "image_path": "downloaded_images\\0074_snapshot_20250715_173319210_TKMB2410017P.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:28",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 412,
+        "y": 1494
+      },
+      "confidence": 0.645,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0074_snapshot_20250715_173319210_TKMB2410017P.jpg",
+      "total_time": "4.862s"
+    },
+    {
+      "index": 74,
+      "image_path": "downloaded_images\\0075_snapshot_20250715_085046100_ZG10256.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:31",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 182,
+        "y": 1358
+      },
+      "confidence": 0.6247743368148804,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0075_snapshot_20250715_085046100_ZG10256.jpg",
+      "total_time": "2.459s"
+    },
+    {
+      "index": 75,
+      "image_path": "downloaded_images\\0076_snapshot_20250715_220130081_atb_301_1q2w3e.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:33",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_middle)",
+      "coordinates": {
+        "x": 686,
+        "y": 1049
+      },
+      "confidence": 0.6308097243309021,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0076_snapshot_20250715_220130081_atb_301_1q2w3e.jpg",
+      "total_time": "2.495s"
+    },
+    {
+      "index": 76,
+      "image_path": "downloaded_images\\0077_732640770766409728-1752521851998.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:36",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_middle)",
+      "coordinates": {
+        "x": 757,
+        "y": 4364
+      },
+      "confidence": 0.6747581362724304,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0077_732640770766409728-1752521851998.jpg",
+      "total_time": "2.866s"
+    },
+    {
+      "index": 77,
+      "image_path": "downloaded_images\\0078_snapshot_20250715_061923274_ZG10652.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:41",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 412,
+        "y": 1494
+      },
+      "confidence": 0.653,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0078_snapshot_20250715_061923274_ZG10652.jpg",
+      "total_time": "5.012s"
+    },
+    {
+      "index": 78,
+      "image_path": "downloaded_images\\0079_snapshot_20250715_113140849_ZG10652.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:45",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 262,
+        "y": 1193
+      },
+      "confidence": 0.95,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0079_snapshot_20250715_113140849_ZG10652.jpg",
+      "total_time": "3.476s"
+    },
+    {
+      "index": 79,
+      "image_path": "downloaded_images\\0080_snapshot_20250715_210406304_TKMB24100186.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:47",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 768,
+        "y": 228
+      },
+      "confidence": 0.8459436893463135,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0080_snapshot_20250715_210406304_TKMB24100186.jpg",
+      "total_time": "1.882s"
+    },
+    {
+      "index": 80,
+      "image_path": "downloaded_images\\0081_0460c97e-606a-11f0-b6e9-7eea6188f6e2_1752466890.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:04:48",
+      "is_url": false,
+      "detected_texts": [
+        "活动太火爆啦(0.65)",
+        "当前人数过多(0.83)",
+        "前往京东APP(0.97)"
+      ],
+      "total_time": "1.233s"
+    },
+    {
+      "index": 81,
+      "image_path": "downloaded_images\\0082_f5a5b7ca-603a-11f0-ac5f-6eebe5e5bdb5_1752446679.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:51",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 69,
+        "y": 351
+      },
+      "confidence": 0.6021546721458435,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0082_f5a5b7ca-603a-11f0-ac5f-6eebe5e5bdb5_1752446679.jpg",
+      "total_time": "2.727s"
+    },
+    {
+      "index": 82,
+      "image_path": "downloaded_images\\0083_eb5ff880-6034-11f0-ba28-c6f7eb1f0394_1752444085.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:04:53",
+      "is_url": false,
+      "detected_texts": [
+        "拼多多(0.67)",
+        "hello(0.94)"
+      ],
+      "total_time": "1.806s"
+    },
+    {
+      "index": 83,
+      "image_path": "downloaded_images\\0084_401ea6f2-6056-11f0-82de-eee1914c6b9e_1752458400.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:04:55",
+      "is_url": false,
+      "detected_texts": [
+        "快来下载京东APP(0.70)"
+      ],
+      "total_time": "2.787s"
+    },
+    {
+      "index": 84,
+      "image_path": "downloaded_images\\0085_a82f2a4e-605d-11f0-a7a5-4e57ff18e603_1752461581.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:04:57",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 316,
+        "y": 180
+      },
+      "confidence": 0.6860318779945374,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0085_a82f2a4e-605d-11f0-a7a5-4e57ff18e603_1752461581.jpg",
+      "total_time": "1.868s"
+    },
+    {
+      "index": 85,
+      "image_path": "downloaded_images\\0086_186f2d8c-60cb-11f0-bf15-6a1e4d5131f6_1752508585.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:04:59",
+      "is_url": false,
+      "detected_texts": [
+        "活动太火爆啦(0.97)",
+        "当前人数过多(0.96)",
+        "更多精彩请前往京东(0.94)",
+        "APP~(0.51)",
+        "前往京东APP(0.99)"
+      ],
+      "total_time": "1.809s"
+    },
+    {
+      "index": 86,
+      "image_path": "downloaded_images\\0087_8909bba6-606d-11f0-9df5-c2fa83a532e6_1752468401.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:01",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 44,
+        "y": 2330
+      },
+      "confidence": 0.6402593851089478,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0087_8909bba6-606d-11f0-9df5-c2fa83a532e6_1752468401.jpg",
+      "total_time": "1.935s"
+    },
+    {
+      "index": 87,
+      "image_path": "downloaded_images\\0088_4f099a42-60a0-11f0-8666-724d79b1bbec_1752490208.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:05:03",
+      "is_url": false,
+      "detected_texts": [
+        "当前人数过多(0.64)",
+        "前往京东APP(0.83)"
+      ],
+      "total_time": "1.562s"
+    },
+    {
+      "index": 88,
+      "image_path": "downloaded_images\\0089_732559108196683776-1752481215024.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:07",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 725
+      },
+      "confidence": 0.8004052639007568,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0089_732559108196683776-1752481215024.jpg",
+      "total_time": "4.522s"
+    },
+    {
+      "index": 89,
+      "image_path": "downloaded_images\\0090_732558461792440320-1752472215794.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:11",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 706,
+        "y": 725
+      },
+      "confidence": 0.800493597984314,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0090_732558461792440320-1752472215794.jpg",
+      "total_time": "3.579s"
+    },
+    {
+      "index": 90,
+      "image_path": "downloaded_images\\0091_732559806658269184-1752482686537.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:15",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 725
+      },
+      "confidence": 0.7953301072120667,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0091_732559806658269184-1752482686537.jpg",
+      "total_time": "3.946s"
+    },
+    {
+      "index": 91,
+      "image_path": "downloaded_images\\0092_732596466846810112-1752504557422.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:18",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 414,
+        "y": 5845
+      },
+      "confidence": 0.8826997876167297,
+      "detection_method": "template_matching",
+      "screen": 4,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0092_732596466846810112-1752504557422.jpg",
+      "total_time": "3.075s"
+    },
+    {
+      "index": 92,
+      "image_path": "downloaded_images\\0093_732559135812898816-1752481484289.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:22",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 706,
+        "y": 725
+      },
+      "confidence": 0.7234703898429871,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0093_732559135812898816-1752481484289.jpg",
+      "total_time": "3.413s"
+    },
+    {
+      "index": 93,
+      "image_path": "downloaded_images\\0094_732559083617390592-1752480606896.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:25",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 706,
+        "y": 725
+      },
+      "confidence": 0.7955836653709412,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0094_732559083617390592-1752480606896.jpg",
+      "total_time": "3.253s"
+    },
+    {
+      "index": 94,
+      "image_path": "downloaded_images\\0095_732559891231289344-1752482895090.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:29",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.7987326979637146,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0095_732559891231289344-1752482895090.jpg",
+      "total_time": "3.536s"
+    },
+    {
+      "index": 95,
+      "image_path": "downloaded_images\\0096_732557748517236736-1752465188927.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:32",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 725
+      },
+      "confidence": 0.7974458932876587,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0096_732557748517236736-1752465188927.jpg",
+      "total_time": "3.287s"
+    },
+    {
+      "index": 96,
+      "image_path": "downloaded_images\\0097_snapshot_20250714_214622619_atb_103_1q2w3e.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:34",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 262,
+        "y": 1193
+      },
+      "confidence": 0.95,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0097_snapshot_20250714_214622619_atb_103_1q2w3e.jpg",
+      "total_time": "1.692s"
+    },
+    {
+      "index": 97,
+      "image_path": "downloaded_images\\0098_732514450121707520-1752453128059.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:37",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 738,
+        "y": 1349
+      },
+      "confidence": 0.6672131419181824,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0098_732514450121707520-1752453128059.jpg",
+      "total_time": "2.946s"
+    },
+    {
+      "index": 98,
+      "image_path": "downloaded_images\\0099_732558634501042176-1752473614736.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:41",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 706,
+        "y": 725
+      },
+      "confidence": 0.7452122569084167,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0099_732558634501042176-1752473614736.jpg",
+      "total_time": "3.308s"
+    },
+    {
+      "index": 99,
+      "image_path": "downloaded_images\\0100_732566778810470401-1752495564093.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:44",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 706,
+        "y": 725
+      },
+      "confidence": 0.7994913458824158,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0100_732566778810470401-1752495564093.jpg",
+      "total_time": "3.213s"
+    },
+    {
+      "index": 100,
+      "image_path": "downloaded_images\\0101_snapshot_20250714_181638678_atb_300_1q2w3e.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:49",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 602,
+        "y": 1695
+      },
+      "confidence": 0.745,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0101_snapshot_20250714_181638678_atb_300_1q2w3e.jpg",
+      "total_time": "5.010s"
+    },
+    {
+      "index": 101,
+      "image_path": "downloaded_images\\0102_732558050107994112-1752467473326.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:53",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 725
+      },
+      "confidence": 0.7974108457565308,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0102_732558050107994112-1752467473326.jpg",
+      "total_time": "4.015s"
+    },
+    {
+      "index": 102,
+      "image_path": "downloaded_images\\0103_732558719808327680-1752474648196.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:05:58",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.7944284081459045,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0103_732558719808327680-1752474648196.jpg",
+      "total_time": "4.327s"
+    },
+    {
+      "index": 103,
+      "image_path": "downloaded_images\\0104_732567865340727296-1752498531652.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:01",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 706,
+        "y": 725
+      },
+      "confidence": 0.7970216870307922,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0104_732567865340727296-1752498531652.jpg",
+      "total_time": "3.534s"
+    },
+    {
+      "index": 104,
+      "image_path": "downloaded_images\\0105_732558551369273344-1752473175336.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:05",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 725
+      },
+      "confidence": 0.7972303628921509,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0105_732558551369273344-1752473175336.jpg",
+      "total_time": "3.039s"
+    },
+    {
+      "index": 105,
+      "image_path": "downloaded_images\\0106_snapshot_20250714_221751614_ZG10126.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:08",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 414,
+        "y": 943
+      },
+      "confidence": 0.777,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0106_snapshot_20250714_221751614_ZG10126.jpg",
+      "total_time": "3.126s"
+    },
+    {
+      "index": 106,
+      "image_path": "downloaded_images\\0107_732563671469404160-1752490968291.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:11",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.7734255790710449,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0107_732563671469404160-1752490968291.jpg",
+      "total_time": "3.548s"
+    },
+    {
+      "index": 107,
+      "image_path": "downloaded_images\\0108_732551048958316544-1752462516880.jpeg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:06:15",
+      "is_url": false,
+      "detected_texts": [],
+      "total_time": "3.459s"
+    },
+    {
+      "index": 108,
+      "image_path": "downloaded_images\\0109_732560902654144512-1752485984844.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:18",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.7829813957214355,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0109_732560902654144512-1752485984844.jpg",
+      "total_time": "3.094s"
+    },
+    {
+      "index": 109,
+      "image_path": "downloaded_images\\0110_732558120098353152-1752468506895.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:22",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.7821434140205383,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0110_732558120098353152-1752468506895.jpg",
+      "total_time": "3.435s"
+    },
+    {
+      "index": 110,
+      "image_path": "downloaded_images\\0111_732558549628637184-1752473144638.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:25",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.7944073677062988,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0111_732558549628637184-1752473144638.jpg",
+      "total_time": "3.108s"
+    },
+    {
+      "index": 111,
+      "image_path": "downloaded_images\\0112_732412426213543937-1752428804612.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:28",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 332,
+        "y": 6242
+      },
+      "confidence": 0.6932255029678345,
+      "detection_method": "template_matching",
+      "screen": 4,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0112_732412426213543937-1752428804612.jpg",
+      "total_time": "3.010s"
+    },
+    {
+      "index": 112,
+      "image_path": "downloaded_images\\0113_732567860766076928-1752498533619.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:32",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 725
+      },
+      "confidence": 0.7044318914413452,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0113_732567860766076928-1752498533619.jpg",
+      "total_time": "3.451s"
+    },
+    {
+      "index": 113,
+      "image_path": "downloaded_images\\0114_732558138591039488-1752468944474.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:35",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 706,
+        "y": 725
+      },
+      "confidence": 0.8051990866661072,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0114_732558138591039488-1752468944474.jpg",
+      "total_time": "3.150s"
+    },
+    {
+      "index": 114,
+      "image_path": "downloaded_images\\0115_snapshot_20250714_112647668_atb_302_1q2w3e.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:37",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 667,
+        "y": 391
+      },
+      "confidence": 0.6848757266998291,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0115_snapshot_20250714_112647668_atb_302_1q2w3e.jpg",
+      "total_time": "1.727s"
+    },
+    {
+      "index": 115,
+      "image_path": "downloaded_images\\0116_732557742518718464-1752465087501.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:40",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.7915135025978088,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0116_732557742518718464-1752465087501.jpg",
+      "total_time": "3.426s"
+    },
+    {
+      "index": 116,
+      "image_path": "downloaded_images\\0117_732558071985491968-1752468035500.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:45",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.7861111164093018,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0117_732558071985491968-1752468035500.jpg",
+      "total_time": "3.999s"
+    },
+    {
+      "index": 117,
+      "image_path": "downloaded_images\\0118_732557819338313728-1752466495052.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:49",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 725
+      },
+      "confidence": 0.7988876104354858,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0118_732557819338313728-1752466495052.jpg",
+      "total_time": "4.332s"
+    },
+    {
+      "index": 118,
+      "image_path": "downloaded_images\\0119_732559093601169408-1752480930901.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:53",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 706,
+        "y": 725
+      },
+      "confidence": 0.7911984324455261,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0119_732559093601169408-1752480930901.jpg",
+      "total_time": "4.225s"
+    },
+    {
+      "index": 119,
+      "image_path": "downloaded_images\\0120_732558063937540096-1752467815070.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:06:58",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 706,
+        "y": 725
+      },
+      "confidence": 0.794092059135437,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0120_732558063937540096-1752467815070.jpg",
+      "total_time": "4.363s"
+    },
+    {
+      "index": 120,
+      "image_path": "downloaded_images\\0121_732558412227424256-1752471508905.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:07:03",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 725
+      },
+      "confidence": 0.79648357629776,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0121_732558412227424256-1752471508905.jpg",
+      "total_time": "4.413s"
+    },
+    {
+      "index": 121,
+      "image_path": "downloaded_images\\0122_732562320450531328-1752489438521.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:07:07",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.7986416816711426,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0122_732562320450531328-1752489438521.jpg",
+      "total_time": "4.198s"
+    },
+    {
+      "index": 122,
+      "image_path": "downloaded_images\\0123_732566934039056384-1752495961546.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:07:12",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 725
+      },
+      "confidence": 0.7921820878982544,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0123_732566934039056384-1752495961546.jpg",
+      "total_time": "4.502s"
+    },
+    {
+      "index": 123,
+      "image_path": "downloaded_images\\0124_732558396540063744-1752471036924.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:07:17",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.79324871301651,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0124_732558396540063744-1752471036924.jpg",
+      "total_time": "4.800s"
+    },
+    {
+      "index": 124,
+      "image_path": "downloaded_images\\0125_732559070952439808-1752480161823.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:07:22",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 706,
+        "y": 725
+      },
+      "confidence": 0.7781997919082642,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0125_732559070952439808-1752480161823.jpg",
+      "total_time": "4.584s"
+    },
+    {
+      "index": 125,
+      "image_path": "downloaded_images\\0126_snapshot_20250714_024132130_ZG10655.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:07:24",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 251,
+        "y": 1661
+      },
+      "confidence": 0.6177036166191101,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0126_snapshot_20250714_024132130_ZG10655.jpg",
+      "total_time": "2.167s"
+    },
+    {
+      "index": 126,
+      "image_path": "downloaded_images\\0127_732403978046427136-1752426810142.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:07:28",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 460,
+        "y": 5925
+      },
+      "confidence": 0.6604042649269104,
+      "detection_method": "template_matching",
+      "screen": 4,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0127_732403978046427136-1752426810142.jpg",
+      "total_time": "4.387s"
+    },
+    {
+      "index": 127,
+      "image_path": "downloaded_images\\0128_732557736646692865-1752464990717.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:07:33",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.806376039981842,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0128_732557736646692865-1752464990717.jpg",
+      "total_time": "4.410s"
+    },
+    {
+      "index": 128,
+      "image_path": "downloaded_images\\0129_732558075266613248-1752468100955.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:07:38",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.7927826046943665,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0129_732558075266613248-1752468100955.jpg",
+      "total_time": "4.625s"
+    },
+    {
+      "index": 129,
+      "image_path": "downloaded_images\\0130_732557957434855424-1752466818449.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:07:42",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 725
+      },
+      "confidence": 0.8019833564758301,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0130_732557957434855424-1752466818449.jpg",
+      "total_time": "4.234s"
+    },
+    {
+      "index": 130,
+      "image_path": "downloaded_images\\0131_732560249575854080-1752483754119.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:07:48",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 443,
+        "y": 6186
+      },
+      "confidence": 0.6693093776702881,
+      "detection_method": "template_matching",
+      "screen": 4,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0131_732560249575854080-1752483754119.jpg",
+      "total_time": "5.139s"
+    },
+    {
+      "index": 131,
+      "image_path": "downloaded_images\\0132_732560557040226304-1752484411525.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:07:54",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 725
+      },
+      "confidence": 0.8041549324989319,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0132_732560557040226304-1752484411525.jpg",
+      "total_time": "6.359s"
+    },
+    {
+      "index": 132,
+      "image_path": "downloaded_images\\0133_snapshot_20250714_235642865_ZG10126.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:08:01",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 412,
+        "y": 1494
+      },
+      "confidence": 0.653,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0133_snapshot_20250714_235642865_ZG10126.jpg",
+      "total_time": "6.576s"
+    },
+    {
+      "index": 133,
+      "image_path": "downloaded_images\\0134_732558294288973824-1752469697686.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:08:08",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.7794395089149475,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0134_732558294288973824-1752469697686.jpg",
+      "total_time": "6.739s"
+    },
+    {
+      "index": 134,
+      "image_path": "downloaded_images\\0135_732557738102116352-1752465013565.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:08:13",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 707,
+        "y": 726
+      },
+      "confidence": 0.7930667996406555,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0135_732557738102116352-1752465013565.jpg",
+      "total_time": "4.528s"
+    },
+    {
+      "index": 135,
+      "image_path": "downloaded_images\\0136_732558632823320576-1752473571159.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:08:17",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 706,
+        "y": 725
+      },
+      "confidence": 0.7924545407295227,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0136_732558632823320576-1752473571159.jpg",
+      "total_time": "4.151s"
+    },
+    {
+      "index": 136,
+      "image_path": "downloaded_images\\0137_snapshot_20250714_114042510_pl_003.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:08:23",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 602,
+        "y": 1695
+      },
+      "confidence": 0.745,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0137_snapshot_20250714_114042510_pl_003.jpg",
+      "total_time": "5.666s"
+    },
+    {
+      "index": 137,
+      "image_path": "downloaded_images\\0138_ed024156-5f9f-11f0-9bc1-825c6aeb1fb0_1752380092.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:08:26",
+      "is_url": false,
+      "detected_texts": [
+        "承包你一年吃喝玩乐大礼(0.82)",
+        "你下单(0.75)",
+        "我买单(0.97)",
+        "奖品价值最高(0.80)",
+        "3600元(1.00)",
+        "拆红包抽锦鲤(0.78)"
+      ],
+      "total_time": "2.817s"
+    },
+    {
+      "index": 138,
+      "image_path": "downloaded_images\\0139_fb0e8c28-5fae-11f0-a3d1-4edc55d34392_1752386558.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:08:27",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 185,
+        "y": 482
+      },
+      "confidence": 0.6431774497032166,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0139_fb0e8c28-5fae-11f0-a3d1-4edc55d34392_1752386558.jpg",
+      "total_time": "1.824s"
+    },
+    {
+      "index": 139,
+      "image_path": "downloaded_images\\0140_3a944ef8-5f93-11f0-904b-62675f6dfeda_1752374639.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:08:31",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 69,
+        "y": 335
+      },
+      "confidence": 0.6021546721458435,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0140_3a944ef8-5f93-11f0-904b-62675f6dfeda_1752374639.jpg",
+      "total_time": "3.460s"
+    },
+    {
+      "index": 140,
+      "image_path": "downloaded_images\\0141_1860244a-5f9f-11f0-9728-1a43f2e00407_1752379736.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:08:34",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 303,
+        "y": 983
+      },
+      "confidence": 0.6365496516227722,
+      "detection_method": "template_matching",
+      "screen": 2,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0141_1860244a-5f9f-11f0-9728-1a43f2e00407_1752379736.jpg",
+      "total_time": "3.429s"
+    },
+    {
+      "index": 141,
+      "image_path": "downloaded_images\\0142_2f135ac6-5fa0-11f0-b2f7-ea60ce0ba512_1752380203.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:08:37",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 49,
+        "y": 2858
+      },
+      "confidence": 0.6915723085403442,
+      "detection_method": "template_matching",
+      "screen": 4,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0142_2f135ac6-5fa0-11f0-b2f7-ea60ce0ba512_1752380203.jpg",
+      "total_time": "2.280s"
+    },
+    {
+      "index": 142,
+      "image_path": "downloaded_images\\0143_732133156492816384-1752362272865.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:08:41",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 578,
+        "y": 5227
+      },
+      "confidence": 0.6866169571876526,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0143_732133156492816384-1752362272865.jpg",
+      "total_time": "4.534s"
+    },
+    {
+      "index": 143,
+      "image_path": "downloaded_images\\0144_732323562883010560-1752407635498.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:08:47",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 637,
+        "y": 2965
+      },
+      "confidence": 0.686244010925293,
+      "detection_method": "template_matching",
+      "screen": 2,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0144_732323562883010560-1752407635498.jpg",
+      "total_time": "5.236s"
+    },
+    {
+      "index": 144,
+      "image_path": "downloaded_images\\0145_732254919611912192-1752391231045.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:08:51",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 464,
+        "y": 4952
+      },
+      "confidence": 0.6633995771408081,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0145_732254919611912192-1752391231045.jpg",
+      "total_time": "4.074s"
+    },
+    {
+      "index": 145,
+      "image_path": "downloaded_images\\0146_732162066224541696-1752369113271.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:08:55",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_middle)",
+      "coordinates": {
+        "x": 757,
+        "y": 2787
+      },
+      "confidence": 0.6857080459594727,
+      "detection_method": "template_matching",
+      "screen": 2,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0146_732162066224541696-1752369113271.jpg",
+      "total_time": "3.864s"
+    },
+    {
+      "index": 146,
+      "image_path": "downloaded_images\\0147_732259906916192256-1752392458231.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:08:58",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 131,
+        "y": 6005
+      },
+      "confidence": 0.6570740938186646,
+      "detection_method": "template_matching",
+      "screen": 4,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0147_732259906916192256-1752392458231.jpg",
+      "total_time": "3.094s"
+    },
+    {
+      "index": 147,
+      "image_path": "downloaded_images\\0148_732381791477829632-1752421498159.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:01",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 807,
+        "y": 1414
+      },
+      "confidence": 0.6814683675765991,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0148_732381791477829632-1752421498159.jpg",
+      "total_time": "2.791s"
+    },
+    {
+      "index": 148,
+      "image_path": "downloaded_images\\0149_732267501980241920-1752394309758.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:05",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 502,
+        "y": 5227
+      },
+      "confidence": 0.6324594020843506,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0149_732267501980241920-1752394309758.jpg",
+      "total_time": "3.673s"
+    },
+    {
+      "index": 149,
+      "image_path": "downloaded_images\\0150_snapshot_20250713_140942681_ZG10149.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:10",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 602,
+        "y": 1695
+      },
+      "confidence": 0.743,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0150_snapshot_20250713_140942681_ZG10149.jpg",
+      "total_time": "5.032s"
+    },
+    {
+      "index": 150,
+      "image_path": "downloaded_images\\0151_732222210316054528-1752383503737.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:13",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 395,
+        "y": 5891
+      },
+      "confidence": 0.6547297239303589,
+      "detection_method": "template_matching",
+      "screen": 4,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0151_732222210316054528-1752383503737.jpg",
+      "total_time": "2.840s"
+    },
+    {
+      "index": 151,
+      "image_path": "downloaded_images\\0152_732223359136845824-1752383766409.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:17",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 578,
+        "y": 5227
+      },
+      "confidence": 0.6866169571876526,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0152_732223359136845824-1752383766409.jpg",
+      "total_time": "3.912s"
+    },
+    {
+      "index": 152,
+      "image_path": "downloaded_images\\0153_732174675710980096-1752372375857.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:21",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 96,
+        "y": 5104
+      },
+      "confidence": 0.6027513742446899,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0153_732174675710980096-1752372375857.jpg",
+      "total_time": "3.875s"
+    },
+    {
+      "index": 153,
+      "image_path": "downloaded_images\\0154_snapshot_20250713_120853104_TKMB2410017P.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:24",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 755,
+        "y": 234
+      },
+      "confidence": 0.7762272953987122,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0154_snapshot_20250713_120853104_TKMB2410017P.jpg",
+      "total_time": "2.863s"
+    },
+    {
+      "index": 154,
+      "image_path": "downloaded_images\\0155_732187847095750656-1752375248385.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:27",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 646,
+        "y": 551
+      },
+      "confidence": 0.8510632514953613,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0155_732187847095750656-1752375248385.jpg",
+      "total_time": "3.225s"
+    },
+    {
+      "index": 155,
+      "image_path": "downloaded_images\\0156_snapshot_20250713_171736787_tq_004.jpeg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:09:29",
+      "is_url": false,
+      "detected_texts": [
+        "5:17(0.97)",
+        "努力加载中(0.98)"
+      ],
+      "total_time": "1.802s"
+    },
+    {
+      "index": 156,
+      "image_path": "downloaded_images\\0157_732375747399020544-1752420141990.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:33",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 646,
+        "y": 5327
+      },
+      "confidence": 0.8516204357147217,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0157_732375747399020544-1752420141990.jpg",
+      "total_time": "3.997s"
+    },
+    {
+      "index": 157,
+      "image_path": "downloaded_images\\0158_4cb9e942-5ef5-11f0-9bfe-5ef8135de875_1752306809.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:38",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 626,
+        "y": 319
+      },
+      "confidence": 0.7905770540237427,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0158_4cb9e942-5ef5-11f0-9bfe-5ef8135de875_1752306809.jpg",
+      "total_time": "4.301s"
+    },
+    {
+      "index": 158,
+      "image_path": "downloaded_images\\0159_6e8a2e8e-5eef-11f0-9532-52bb88dd2cb4_1752304289.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:42",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 625,
+        "y": 360
+      },
+      "confidence": 0.7018800973892212,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0159_6e8a2e8e-5eef-11f0-9532-52bb88dd2cb4_1752304289.jpg",
+      "total_time": "3.834s"
+    },
+    {
+      "index": 159,
+      "image_path": "downloaded_images\\0160_e733576c-5eda-11f0-b862-1e189731acd4_1752295472.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:46",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 626,
+        "y": 191
+      },
+      "confidence": 0.7604033350944519,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0160_e733576c-5eda-11f0-b862-1e189731acd4_1752295472.jpg",
+      "total_time": "4.618s"
+    },
+    {
+      "index": 160,
+      "image_path": "downloaded_images\\0161_9670e50a-5ecc-11f0-bcc7-3eb081123f91_1752289323.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:49",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 164,
+        "y": 609
+      },
+      "confidence": 0.6060749888420105,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0161_9670e50a-5ecc-11f0-bcc7-3eb081123f91_1752289323.jpg",
+      "total_time": "2.577s"
+    },
+    {
+      "index": 161,
+      "image_path": "downloaded_images\\0162_731898058022850560-1752306273216.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:52",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 238,
+        "y": 6449
+      },
+      "confidence": 0.6758142709732056,
+      "detection_method": "template_matching",
+      "screen": 4,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0162_731898058022850560-1752306273216.jpg",
+      "total_time": "3.245s"
+    },
+    {
+      "index": 162,
+      "image_path": "downloaded_images\\0163_snapshot_20250712_092451807_atb_100_1q2w3e.jpeg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:09:54",
+      "is_url": false,
+      "detected_texts": [
+        "9:24(0.91)",
+        "商品已下架。推荐以下相似商品(0.74)",
+        "网络繁忙。请稍后再试(0.50)"
+      ],
+      "total_time": "1.862s"
+    },
+    {
+      "index": 163,
+      "image_path": "downloaded_images\\0164_snapshot_20250712_183339849_ZG10760.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:56",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 768,
+        "y": 228
+      },
+      "confidence": 0.8449908494949341,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0164_snapshot_20250712_183339849_ZG10760.jpg",
+      "total_time": "1.907s"
+    },
+    {
+      "index": 164,
+      "image_path": "downloaded_images\\0165_snapshot_20250712_004338339_ZG10652.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:09:58",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 251,
+        "y": 1661
+      },
+      "confidence": 0.6177036166191101,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0165_snapshot_20250712_004338339_ZG10652.jpg",
+      "total_time": "1.775s"
+    },
+    {
+      "index": 165,
+      "image_path": "downloaded_images\\0166_snapshot_20250712_114936258_ZG10653.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:03",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 602,
+        "y": 1695
+      },
+      "confidence": 0.745,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0166_snapshot_20250712_114936258_ZG10653.jpg",
+      "total_time": "4.934s"
+    },
+    {
+      "index": 166,
+      "image_path": "downloaded_images\\0167_731802050187776000-1752283250515.jpeg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:10:06",
+      "is_url": false,
+      "detected_texts": [
+        ":(0.84)"
+      ],
+      "total_time": "2.672s"
+    },
+    {
+      "index": 167,
+      "image_path": "downloaded_images\\0168_731824679853641728-1752288794213.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:09",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 42,
+        "y": 6291
+      },
+      "confidence": 0.7424178123474121,
+      "detection_method": "template_matching",
+      "screen": 4,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0168_731824679853641728-1752288794213.jpg",
+      "total_time": "3.120s"
+    },
+    {
+      "index": 168,
+      "image_path": "downloaded_images\\0169_snapshot_20250712_145730947_i_app_audit_0005.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:11",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 259,
+        "y": 1189
+      },
+      "confidence": 0.918,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0169_snapshot_20250712_145730947_i_app_audit_0005.jpg",
+      "total_time": "1.789s"
+    },
+    {
+      "index": 169,
+      "image_path": "downloaded_images\\0170_731889085389225984-1752304114191.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:14",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 42,
+        "y": 6291
+      },
+      "confidence": 0.7412559986114502,
+      "detection_method": "template_matching",
+      "screen": 4,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0170_731889085389225984-1752304114191.jpg",
+      "total_time": "3.127s"
+    },
+    {
+      "index": 170,
+      "image_path": "downloaded_images\\0171_snapshot_20250712_154702936_i_app_audit_0005.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:17",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 262,
+        "y": 1189
+      },
+      "confidence": 0.915,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0171_snapshot_20250712_154702936_i_app_audit_0005.jpg",
+      "total_time": "2.678s"
+    },
+    {
+      "index": 171,
+      "image_path": "downloaded_images\\0172_snapshot_20250712_032136658_atb_301_1q2w3e.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:19",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 768,
+        "y": 228
+      },
+      "confidence": 0.8449901938438416,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0172_snapshot_20250712_032136658_atb_301_1q2w3e.jpg",
+      "total_time": "2.170s"
+    },
+    {
+      "index": 172,
+      "image_path": "downloaded_images\\0173_731857372226146304-1752296457860.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:22",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 675,
+        "y": 1127
+      },
+      "confidence": 0.7862567901611328,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0173_731857372226146304-1752296457860.jpg",
+      "total_time": "2.921s"
+    },
+    {
+      "index": 173,
+      "image_path": "downloaded_images\\0174_snapshot_20250712_114736426_atb_300_1q2w3e.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:27",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 602,
+        "y": 1695
+      },
+      "confidence": 0.745,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0174_snapshot_20250712_114736426_atb_300_1q2w3e.jpg",
+      "total_time": "4.932s"
+    },
+    {
+      "index": 174,
+      "image_path": "downloaded_images\\0175_snapshot_20250712_082431477_ZG10126.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:29",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 262,
+        "y": 1193
+      },
+      "confidence": 0.95,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0175_snapshot_20250712_082431477_ZG10126.jpg",
+      "total_time": "2.208s"
+    },
+    {
+      "index": 175,
+      "image_path": "downloaded_images\\0176_snapshot_20250712_094502537_atb_101_1q2w3e.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:31",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 262,
+        "y": 1193
+      },
+      "confidence": 0.95,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0176_snapshot_20250712_094502537_atb_101_1q2w3e.jpg",
+      "total_time": "1.624s"
+    },
+    {
+      "index": 176,
+      "image_path": "downloaded_images\\0177_b9061cf2-5e22-11f0-81d7-0649c84d8cdf_1752216367.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:10:33",
+      "is_url": false,
+      "detected_texts": [
+        "活动太火爆啦(0.96)",
+        "当前人数过多(0.89)",
+        "更多精彩请前往京东(0.98)",
+        "APP-(0.98)",
+        "前往京东APP(0.96)"
+      ],
+      "total_time": "1.894s"
+    },
+    {
+      "index": 177,
+      "image_path": "downloaded_images\\0178_94141176-5e20-11f0-a58f-a6879042218e_1752215446.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:10:35",
+      "is_url": false,
+      "detected_texts": [
+        "hello(0.94)",
+        "#多多(0.96)",
+        "记得及(0.90)",
+        "时提现 ~(0.60)"
+      ],
+      "total_time": "2.770s"
+    },
+    {
+      "index": 178,
+      "image_path": "downloaded_images\\0179_6db71f20-5e37-11f0-a1ea-5634a1739169_1752225260.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:38",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 492,
+        "y": 1068
+      },
+      "confidence": 0.6015914082527161,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0179_6db71f20-5e37-11f0-a1ea-5634a1739169_1752225260.jpg",
+      "total_time": "2.446s"
+    },
+    {
+      "index": 179,
+      "image_path": "downloaded_images\\0180_1a1231ac-5e2d-11f0-bbc5-724d79b1bbec_1752220825.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:10:39",
+      "is_url": false,
+      "detected_texts": [
+        "当前人数过多(0.64)",
+        "前往京东APP(0.83)"
+      ],
+      "total_time": "1.444s"
+    },
+    {
+      "index": 180,
+      "image_path": "downloaded_images\\0181_f4d79126-5e58-11f0-a2fb-ea31c6fb6f84_1752239660.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:40",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 268,
+        "y": 802
+      },
+      "confidence": 0.6690883636474609,
+      "detection_method": "template_matching",
+      "screen": 2,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0181_f4d79126-5e58-11f0-a2fb-ea31c6fb6f84_1752239660.jpg",
+      "total_time": "0.954s"
+    },
+    {
+      "index": 181,
+      "image_path": "downloaded_images\\0182_c50c9b42-5e0a-11f0-a261-5aaed21a1bb2_1752206079.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:10:43",
+      "is_url": false,
+      "detected_texts": [
+        "承包你一年吃喝玩乐大礼(0.82)",
+        "你下单(0.75)",
+        "我买单(0.97)",
+        "奖品价值最高(0.80)",
+        "3600元(1.00)",
+        "拆红包抽锦鲤(0.78)"
+      ],
+      "total_time": "2.430s"
+    },
+    {
+      "index": 182,
+      "image_path": "downloaded_images\\0183_1e4647fa-5e22-11f0-81af-e6e2cb0be7a9_1752216107.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:10:45",
+      "is_url": false,
+      "detected_texts": [
+        "活动太火爆啦(0.96)",
+        "当前人数过多(0.89)",
+        "更多精彩请前往京东(0.98)",
+        "APP-(0.98)",
+        "前往京东APP(0.96)"
+      ],
+      "total_time": "2.036s"
+    },
+    {
+      "index": 183,
+      "image_path": "downloaded_images\\0184_2f5c1a5a-5e2d-11f0-8a68-b6c9b68992c6_1752220860.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:47",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 281,
+        "y": 160
+      },
+      "confidence": 0.6632844805717468,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0184_2f5c1a5a-5e2d-11f0-8a68-b6c9b68992c6_1752220860.jpg",
+      "total_time": "2.244s"
+    },
+    {
+      "index": 184,
+      "image_path": "downloaded_images\\0185_85cc2f58-5e21-11f0-a3a9-8e42ccb862c3_1752215852.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:10:49",
+      "is_url": false,
+      "detected_texts": [
+        "活动太火爆啦(0.96)",
+        "当前人数过多(0.89)",
+        "更多精彩请前往京东(0.98)",
+        "APP-(0.98)",
+        "前往京东APP(0.96)"
+      ],
+      "total_time": "1.995s"
+    },
+    {
+      "index": 185,
+      "image_path": "downloaded_images\\0186_93fb969e-5dd2-11f0-bf4c-c2a171d05a6b_1752181945.jpg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:10:51",
+      "is_url": false,
+      "detected_texts": [
+        "hello(0.56)",
+        "亲爱的用户(0.67)"
+      ],
+      "total_time": "1.820s"
+    },
+    {
+      "index": 186,
+      "image_path": "downloaded_images\\0187_a22fb5da-5e16-11f0-af83-ea3f3b134af2_1752211175.jpg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:53",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 24,
+        "y": 3336
+      },
+      "confidence": 0.648221492767334,
+      "detection_method": "template_matching",
+      "screen": 5,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0187_a22fb5da-5e16-11f0-af83-ea3f3b134af2_1752211175.jpg",
+      "total_time": "1.966s"
+    },
+    {
+      "index": 187,
+      "image_path": "downloaded_images\\0188_snapshot_20250711_225658085_ZG10256.jpeg",
+      "status": "not_found",
+      "timestamp": "2025-07-18 17:10:55",
+      "is_url": false,
+      "detected_texts": [
+        "10:56(1.00)",
+        "努力加载中(0.97)"
+      ],
+      "total_time": "1.675s"
+    },
+    {
+      "index": 188,
+      "image_path": "downloaded_images\\0189_731459362820337664-1752201826432.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:57",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 315,
+        "y": 1442
+      },
+      "confidence": 0.931,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0189_731459362820337664-1752201826432.jpg",
+      "total_time": "2.590s"
+    },
+    {
+      "index": 189,
+      "image_path": "downloaded_images\\0190_snapshot_20250711_112336445_ZG10648.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:10:59",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 262,
+        "y": 1193
+      },
+      "confidence": 0.95,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0190_snapshot_20250711_112336445_ZG10648.jpg",
+      "total_time": "1.988s"
+    },
+    {
+      "index": 190,
+      "image_path": "downloaded_images\\0191_snapshot_20250711_152335406_ZG10655.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:11:01",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 262,
+        "y": 1193
+      },
+      "confidence": 0.95,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0191_snapshot_20250711_152335406_ZG10655.jpg",
+      "total_time": "1.594s"
+    },
+    {
+      "index": 191,
+      "image_path": "downloaded_images\\0192_731526345570004992-1752219617616.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:11:03",
+      "is_url": false,
+      "keyword": "确定",
+      "full_text": "确定",
+      "coordinates": {
+        "x": 494,
+        "y": 1254
+      },
+      "confidence": 0.988,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0192_731526345570004992-1752219617616.jpg",
+      "total_time": "2.005s"
+    },
+    {
+      "index": 192,
+      "image_path": "downloaded_images\\0193_snapshot_20250711_014033164_ZG10167.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:11:05",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 768,
+        "y": 228
+      },
+      "confidence": 0.8449908494949341,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0193_snapshot_20250711_014033164_ZG10167.jpg",
+      "total_time": "1.851s"
+    },
+    {
+      "index": 193,
+      "image_path": "downloaded_images\\0194_snapshot_20250711_095611939_ZG10761.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:11:10",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 602,
+        "y": 1695
+      },
+      "confidence": 0.743,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0194_snapshot_20250711_095611939_ZG10761.jpg",
+      "total_time": "4.652s"
+    },
+    {
+      "index": 194,
+      "image_path": "downloaded_images\\0195_731483704476192768-1752207343039.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:11:12",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 684,
+        "y": 786
+      },
+      "confidence": 0.6594979166984558,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0195_731483704476192768-1752207343039.jpg",
+      "total_time": "2.775s"
+    },
+    {
+      "index": 195,
+      "image_path": "downloaded_images\\0196_731514198865620992-1752215165439.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:11:14",
+      "is_url": false,
+      "keyword": "关闭",
+      "full_text": "关闭",
+      "coordinates": {
+        "x": 324,
+        "y": 1448
+      },
+      "confidence": 0.962,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0196_731514198865620992-1752215165439.jpg",
+      "total_time": "1.876s"
+    },
+    {
+      "index": 196,
+      "image_path": "downloaded_images\\0197_731618361462243328-1752244484123.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:11:18",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_right_top)",
+      "coordinates": {
+        "x": 666,
+        "y": 1251
+      },
+      "confidence": 0.8624551892280579,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0197_731618361462243328-1752244484123.jpg",
+      "total_time": "3.064s"
+    },
+    {
+      "index": 197,
+      "image_path": "downloaded_images\\0198_snapshot_20250711_180124700_i_app_audit_0002.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:11:20",
+      "is_url": false,
+      "keyword": "我知道了",
+      "full_text": "我知道了",
+      "coordinates": {
+        "x": 409,
+        "y": 1001
+      },
+      "confidence": 0.915,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0198_snapshot_20250711_180124700_i_app_audit_0002.jpg",
+      "total_time": "2.398s"
+    },
+    {
+      "index": 198,
+      "image_path": "downloaded_images\\0199_731560842450456576-1752228566364.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:11:23",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 303,
+        "y": 5914
+      },
+      "confidence": 0.7115850448608398,
+      "detection_method": "template_matching",
+      "screen": 4,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0199_731560842450456576-1752228566364.jpg",
+      "total_time": "3.298s"
+    },
+    {
+      "index": 199,
+      "image_path": "downloaded_images\\0200_snapshot_20250711_121409812_ZG10655.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:11:29",
+      "is_url": false,
+      "keyword": "同意",
+      "full_text": "同意",
+      "coordinates": {
+        "x": 602,
+        "y": 1695
+      },
+      "confidence": 0.745,
+      "detection_method": "ocr",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0200_snapshot_20250711_121409812_ZG10655.jpg",
+      "total_time": "5.574s"
+    },
+    {
+      "index": 200,
+      "image_path": "downloaded_images\\0201_731429460554563584-1752194453109.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:11:32",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 131,
+        "y": 6005
+      },
+      "confidence": 0.6570740938186646,
+      "detection_method": "template_matching",
+      "screen": 4,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0201_731429460554563584-1752194453109.jpg",
+      "total_time": "3.254s"
+    },
+    {
+      "index": 201,
+      "image_path": "downloaded_images\\0202_731462804276137984-1752202434178.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:11:36",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_bottom_center)",
+      "coordinates": {
+        "x": 578,
+        "y": 5227
+      },
+      "confidence": 0.6866169571876526,
+      "detection_method": "template_matching",
+      "screen": 3,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_0202_731462804276137984-1752202434178.jpg",
+      "total_time": "3.375s"
+    },
+    {
+      "index": 202,
+      "image_path": "downloaded_images\\032.jpeg",
+      "status": "success",
+      "timestamp": "2025-07-18 17:11:38",
+      "is_url": false,
+      "keyword": "×",
+      "full_text": "×(x_button_left_bottom)",
+      "coordinates": {
+        "x": 158,
+        "y": 1005
+      },
+      "confidence": 0.7185513377189636,
+      "detection_method": "template_matching",
+      "screen": 1,
+      "annotated_image": "annotated_images_20250718_170110\\annotated_032.jpg",
+      "total_time": "2.392s"
+    }
+  ]
+}
