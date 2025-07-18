@@ -18,6 +18,7 @@ import sys
 import requests
 import tempfile
 from urllib.parse import urlparse
+import glob
 
 class OptimizedButtonFinder:
     """优化后的按钮识别器"""
@@ -36,6 +37,9 @@ class OptimizedButtonFinder:
         
         # 文字置信度阈值
         self.text_confidence_threshold = 0.6
+        
+        # ×号置信度阈值（从0.5提高到0.6）
+        self.x_confidence_threshold = 0.6
         
         # 图片缩放因子
         self.scale_factor = 1.0
@@ -169,8 +173,8 @@ class OptimizedButtonFinder:
                         'template_size': template_size
                     }
             
-            # 如果找到匹配且置信度足够高
-            if best_confidence > 0.5:
+            # 使用更高的置信度阈值（0.6）来过滤×号检测结果
+            if best_confidence > self.x_confidence_threshold:
                 x = roi_x + best_match['location'][0] + best_match['template_size'] // 2
                 y = roi_y + best_match['location'][1] + best_match['template_size'] // 2
                 
@@ -475,28 +479,78 @@ def create_annotated_image(image_path, center_x, center_y, keyword, confidence, 
         return False
 
 
-def batch_process_images(txt_file_path, output_file="recognition_results.json"):
-    """批量处理图片"""
+def get_images_from_folder(folder_path):
+    """获取文件夹中的所有图片文件
+    
+    Args:
+        folder_path: 文件夹路径
+        
+    Returns:
+        list: 图片文件路径列表
+    """
+    # 支持的图片格式
+    image_extensions = ['*.jpg', '*.jpeg', '*.png', '*.bmp', '*.gif', '*.tiff', '*.webp']
+    
+    image_files = []
+    
+    # 遍历所有支持的格式
+    for ext in image_extensions:
+        pattern = os.path.join(folder_path, ext)
+        image_files.extend(glob.glob(pattern))
+        # 大写扩展名
+        pattern_upper = os.path.join(folder_path, ext.upper())
+        image_files.extend(glob.glob(pattern_upper))
+    
+    # 去重并排序
+    image_files = list(set(image_files))
+    image_files.sort()
+    
+    return image_files
+
+
+def batch_process_images(txt_file_path=None, folder_path=None, output_file="recognition_results.json"):
+    """批量处理图片
+    
+    Args:
+        txt_file_path: txt文件路径（包含图片路径列表）
+        folder_path: 文件夹路径（直接读取文件夹中的图片）
+        output_file: 输出文件名
+    """
     print(f"开始批量处理图片...")
-    print(f"读取路径文件: {txt_file_path}")
-    print("=" * 60)
     
-    if not os.path.exists(txt_file_path):
-        print(f"错误: 路径文件不存在 - {txt_file_path}")
-        return
-    
-    # 创建输出目录
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_dir = f"annotated_images_{timestamp}"
-    os.makedirs(output_dir, exist_ok=True)
-    
-    # 读取图片路径
     image_paths = []
-    with open(txt_file_path, 'r', encoding='utf-8') as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith('#'):
-                image_paths.append(line)
+    source_info = ""
+    
+    # 根据输入类型获取图片路径列表
+    if txt_file_path:
+        print(f"读取路径文件: {txt_file_path}")
+        source_info = f"文本文件: {txt_file_path}"
+        
+        if not os.path.exists(txt_file_path):
+            print(f"错误: 路径文件不存在 - {txt_file_path}")
+            return
+        
+        with open(txt_file_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    image_paths.append(line)
+                    
+    elif folder_path:
+        print(f"读取文件夹: {folder_path}")
+        source_info = f"文件夹: {folder_path}"
+        
+        if not os.path.exists(folder_path):
+            print(f"错误: 文件夹不存在 - {folder_path}")
+            return
+        
+        if not os.path.isdir(folder_path):
+            print(f"错误: {folder_path} 不是一个文件夹")
+            return
+        
+        image_paths = get_images_from_folder(folder_path)
+    
+    print("=" * 60)
     
     if not image_paths:
         print("未找到有效的图片路径")
@@ -511,6 +565,11 @@ def batch_process_images(txt_file_path, output_file="recognition_results.json"):
     results = []
     success_count = 0
     downloaded_files = []
+    
+    # 创建输出目录
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_dir = f"annotated_images_{timestamp}"
+    os.makedirs(output_dir, exist_ok=True)
     
     # 处理每个图片
     for idx, image_path in enumerate(image_paths, 1):
@@ -627,8 +686,9 @@ def batch_process_images(txt_file_path, output_file="recognition_results.json"):
             "success_count": success_count,
             "failed_count": len(image_paths) - success_count,
             "process_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "source_file": txt_file_path,
-            "output_directory": output_dir
+            "source": source_info,
+            "output_directory": output_dir,
+            "x_confidence_threshold": 0.6
         },
         "results": results
     }
@@ -643,6 +703,7 @@ def batch_process_images(txt_file_path, output_file="recognition_results.json"):
     print(f"  失败: {len(image_paths) - success_count} 个")
     print(f"  结果已保存到: {output_file}")
     print(f"  标注图片保存到: {output_dir}")
+    print(f"  ×号置信度阈值: 0.6")
     
     return results
 
@@ -653,7 +714,7 @@ def main():
     print("优化版OCR按钮识别工具")
     print("识别逻辑：")
     print("  1. 文字识别优先（置信度>0.6立即返回）")
-    print("  2. ×号检测（排除Y<140区域）")
+    print("  2. ×号检测（置信度>0.6，排除Y<140区域）")
     print("  3. 重点区域：右侧中上、右侧中间、左侧中下、底部中间")
     print("  4. 长截图逐屏处理，返回最高置信度结果")
     print("=" * 60)
@@ -675,15 +736,16 @@ def main():
         print("\n选择操作:")
         print("1. 处理 image_paths.txt")
         print("2. 指定其他txt文件")
-        print("3. 退出")
+        print("3. 处理文件夹中的图片")
+        print("4. 退出")
         
-        choice = input("\n请输入选项 (1/2/3): ").strip()
+        choice = input("\n请输入选项 (1/2/3/4): ").strip()
         
         if choice == '1':
             if os.path.exists(example_txt):
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                 output_file = f"results_{timestamp}.json"
-                batch_process_images(example_txt, output_file)
+                batch_process_images(txt_file_path=example_txt, output_file=output_file)
             else:
                 print(f"\n错误: {example_txt} 文件不存在")
                 
@@ -692,11 +754,20 @@ def main():
             if os.path.exists(txt_file):
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                 output_file = f"results_{timestamp}.json"
-                batch_process_images(txt_file, output_file)
+                batch_process_images(txt_file_path=txt_file, output_file=output_file)
             else:
                 print(f"\n错误: {txt_file} 文件不存在")
                 
         elif choice == '3':
+            folder_path = input("请输入文件夹路径: ").strip()
+            if os.path.exists(folder_path) and os.path.isdir(folder_path):
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                output_file = f"results_folder_{timestamp}.json"
+                batch_process_images(folder_path=folder_path, output_file=output_file)
+            else:
+                print(f"\n错误: {folder_path} 不是有效的文件夹路径")
+                
+        elif choice == '4':
             print("\n程序退出")
             break
         else:
