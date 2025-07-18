@@ -1055,7 +1055,7 @@ def monitor_and_process():
             break
 
 if __name__ == "__main__":
-    # 创建示例txt文件（如果不存在）
+    # 创建示例txt文件
     example_txt = "image_paths.txt"
     if not os.path.exists(example_txt):
         with open(example_txt, 'w', encoding='utf-8') as f:
