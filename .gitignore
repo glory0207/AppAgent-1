@@ -1,0 +1,35 @@
+# 忽略包含敏感信息的结果文件
+results_*.txt
+
+# 忽略缓存文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.pytest_cache/
+
+# 忽略临时文件
+*.tmp
+*.temp
+temp/
+ceshi.txt
+
+# 忽略OCR缓存
+ocr_cache.pkl
+
+# 忽略坐标报告
+coordinates_report.json
+
+# 忽略验证图片
+verify_*.png
+
+# 忽略标记的图片（如果包含敏感信息）
+marked_images/
+
+# 忽略图片路径文件
+image_paths.txt
+
+# 忽略敏感配置文件（如果包含API密钥）
+config_secret.yaml
