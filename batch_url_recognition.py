@@ -22,16 +22,25 @@ from urllib.parse import urlparse
 
 # 保留所有原有的检测函数
 def detect_close_button_by_shape(image_path):
-    """通过形状识别关闭按钮（×号）"""
+    """通过形状识别关闭按钮（×号） - 优先检测右上角"""
     try:
         img = cv2.imread(image_path)
         if img is None:
             return None
         
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        h, w = gray.shape
         
+        # 重点搜索右上角区域 (右侧30%，顶部30%)
+        roi_x = int(w * 0.7)
+        roi_y = 0
+        roi_w = int(w * 0.3)
+        roi_h = int(h * 0.3)
+        roi = gray[roi_y:roi_y+roi_h, roi_x:roi_x+roi_w]
+        
+        # 在ROI中查找圆形
         circles = cv2.HoughCircles(
-            gray,
+            roi,
             cv2.HOUGH_GRADIENT,
             dp=1,
             minDist=30,
@@ -45,34 +54,36 @@ def detect_close_button_by_shape(image_path):
             circles = np.round(circles[0, :]).astype("int")
             
             for (x, y, r) in circles:
-                if x > img.shape[1] * 0.75 and y < img.shape[0] * 0.25:
-                    return {
-                        "found": True,
-                        "center": {"x": x, "y": y},
-                        "radius": r,
-                        "type": "circular_close_button"
-                    }
+                # 转换回原图坐标
+                actual_x = roi_x + x
+                actual_y = roi_y + y
+                
+                return {
+                    "found": True,
+                    "center": {"x": actual_x, "y": actual_y},
+                    "radius": r,
+                    "type": "circular_close_button_top_right"
+                }
         
-        edges = cv2.Canny(gray, 50, 150)
+        # 在ROI中查找轮廓
+        edges = cv2.Canny(roi, 50, 150)
         contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         
         for contour in contours:
             area = cv2.contourArea(contour)
             if 100 < area < 800:
-                x, y, w, h = cv2.boundingRect(contour)
+                x, y, w_box, h_box = cv2.boundingRect(contour)
                 
-                in_top_left = x < img.shape[1] * 0.08 and y < img.shape[0] * 0.08
-                in_top_right = x > img.shape[1] * 0.85 and y < img.shape[0] * 0.08
-                
-                if (in_top_left or in_top_right) and abs(w - h) < min(w, h) * 0.3:
-                    center_x = x + w // 2
-                    center_y = y + h // 2
+                # 检查是否接近正方形
+                if abs(w_box - h_box) < min(w_box, h_box) * 0.3:
+                    actual_x = roi_x + x + w_box // 2
+                    actual_y = roi_y + y + h_box // 2
                     
                     return {
                         "found": True,
-                        "center": {"x": center_x, "y": center_y},
+                        "center": {"x": actual_x, "y": actual_y},
                         "area": area,
-                        "type": "corner_close_button"
+                        "type": "corner_close_button_top_right"
                     }
         
         return None
@@ -466,16 +477,57 @@ class OptimizedButtonFinder:
         print(f"模型加载完成，耗时: {load_time:.2f}s")
         
         # 目标关键字
-        self.keywords = ["关闭","同意", "确定","更新微信","继续访问","我知道了","同意并继续","放弃","取消", "重试"]
+        self.keywords = ["关闭","同意", "确定","更新微信","继续访问","我知道了","同意并继续","放弃","取消", "重试","前往京东APP"]
+        
+        # 图片处理参数
+        self.scale_factor = 1.0  # 缩放因子
+        self.crop_applied = False  # 是否进行了截取
+        self.crop_offset_y = 0  # 截取的Y偏移（长截图情况下为0）
     
     def preprocess_image(self, image_path):
-        """轻度压缩预处理 - 固定800px压缩"""
+        """轻度压缩预处理 - 固定800px压缩，并处理长截图"""
         try:
             img = cv2.imread(image_path)
             if img is None:
                 return None
             
             height, width = img.shape[:2]
+            original_height = height  # 保存原始高度
+            
+            # 重置处理参数
+            self.crop_applied = False
+            self.crop_offset_y = 0
+            
+            # 处理长截图 - 判断是否为手机长截图
+            aspect_ratio = height / width
+            
+            # 如果高宽比大于2.5，认为是长截图（一般手机屏幕高宽比在1.5-2.3之间）
+            if aspect_ratio > 2.5:
+                print(f"  检测到长截图 (高宽比: {aspect_ratio:.2f})，截取第一屏...")
+                
+                # 计算第一屏的高度
+                # 常见手机屏幕比例：
+                # 16:9 = 1.78
+                # 18:9 = 2.0
+                # 19.5:9 = 2.17
+                # 21:9 = 2.33
+                # 取一个合理的最大值2.3作为第一屏的高宽比
+                first_screen_height = int(width * 2.3)
+                
+                # 确保不超过原图高度
+                if first_screen_height > height:
+                    first_screen_height = height
+                
+                # 截取第一屏
+                img = img[:first_screen_height, :, :]
+                height = first_screen_height
+                self.crop_applied = True
+                # 从顶部截取，所以Y偏移为0
+                self.crop_offset_y = 0
+                
+                print(f"  已截取第一屏: {width}x{height} (原图: {width}x{original_height})")
+            
+            # 继续原有的缩放处理
             original_size = max(height, width)
             
             max_size = 800
@@ -496,7 +548,12 @@ class OptimizedButtonFinder:
             return None
 
     def find_button(self, image_path):
-        """按钮查找函数"""
+        """按钮查找函数
+        
+        注意：所有返回的坐标都是基于原始图片的坐标系
+        - OCR在预处理后的图片上运行，坐标会转换回原图
+        - 形状检测函数直接在原图上运行，坐标无需转换
+        """
         start_time = time.time()
         
         # 1. 图片预处理
@@ -537,17 +594,21 @@ class OptimizedButtonFinder:
                         for keyword in self.keywords:
                             if keyword in text:
                                 bbox = np.array(bbox)
+                                # 将坐标转换回原始图片的坐标系
+                                # 注意：由于长截图是从顶部截取的，Y坐标不需要额外偏移
+                                # 只需要应用缩放因子即可
                                 center_x = int(np.mean(bbox[:, 0]) * self.scale_factor)
                                 center_y = int(np.mean(bbox[:, 1]) * self.scale_factor)
                                 
+                                # 将边界框坐标也转换回原图坐标系
                                 original_bbox = (bbox * self.scale_factor).astype(int).tolist()
                                 
                                 result = {
                                     "found": True,
                                     "keyword": keyword,
                                     "full_text": text,
-                                    "center": {"x": center_x, "y": center_y},
-                                    "bbox": original_bbox,
+                                    "center": {"x": center_x, "y": center_y},  # 原图坐标
+                                    "bbox": original_bbox,  # 原图边界框
                                     "confidence": round(conf_float, 3),
                                     "detection_method": "ocr",
                                     "preprocess_time": f"{preprocess_time:.3f}s",
@@ -561,10 +622,12 @@ class OptimizedButtonFinder:
                     continue
         
         # 4. 如果OCR未找到关键字，再尝试图像识别关闭按钮
+        # 注意：以下所有形状检测函数都直接在原图上运行，返回的坐标已经是原图坐标
         shape_start = time.time()
         
         image_detection_result = None
         
+        # 所有形状检测函数使用原始图片路径
         shape_result = detect_close_button_by_shape(image_path)
         if shape_result and shape_result["found"]:
             image_detection_result = shape_result
