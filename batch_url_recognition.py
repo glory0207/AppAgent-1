@@ -32,13 +32,13 @@ class OptimizedButtonFinder:
         print(f"模型加载完成，耗时: {load_time:.2f}s")
         
         # 目标关键字
-        self.keywords = ["关闭", "同意", "确定", "放弃","我知道了"]
+        self.keywords = ["关闭", "同意", "确定", "我知道了"]
         
         # 文字置信度阈值
         self.text_confidence_threshold = 0.6
         
-        # ×号置信度阈值
-        self.x_confidence_threshold = 0.7
+        # ×号置信度阈值 
+        self.x_confidence_threshold = 0.75
         
         # 图片缩放因子
         self.scale_factor = 1.0
