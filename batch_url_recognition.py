@@ -21,7 +21,7 @@ from urllib.parse import urlparse
 import glob
 
 class OptimizedButtonFinder:
-    """优化后的按钮识别器"""
+    """按钮识别器"""
     
     def __init__(self):
         """初始化OCR模型"""
@@ -32,14 +32,13 @@ class OptimizedButtonFinder:
         print(f"模型加载完成，耗时: {load_time:.2f}s")
         
         # 目标关键字
-        self.keywords = ["关闭", "同意", "确定", "继续访问", "我知道了", 
-                        "同意并继续", "取消"]
+        self.keywords = ["关闭", "同意", "确定", "放弃","我知道了"]
         
         # 文字置信度阈值
         self.text_confidence_threshold = 0.6
         
-        # ×号置信度阈值（从0.5提高到0.6）
-        self.x_confidence_threshold = 0.6
+        # ×号置信度阈值
+        self.x_confidence_threshold = 0.7
         
         # 图片缩放因子
         self.scale_factor = 1.0
@@ -173,7 +172,7 @@ class OptimizedButtonFinder:
                         'template_size': template_size
                     }
             
-            # 使用更高的置信度阈值（0.6）来过滤×号检测结果
+            # 使用更高的置信度阈值来过滤×号检测结果
             if best_confidence > self.x_confidence_threshold:
                 x = roi_x + best_match['location'][0] + best_match['template_size'] // 2
                 y = roi_y + best_match['location'][1] + best_match['template_size'] // 2
@@ -709,28 +708,15 @@ def batch_process_images(txt_file_path=None, folder_path=None, output_file="reco
 
 
 def main():
-    """主程序入口"""
-    print("=" * 60)
-    print("优化版OCR按钮识别工具")
-    print("识别逻辑：")
-    print("  1. 文字识别优先（置信度>0.6立即返回）")
-    print("  2. ×号检测（置信度>0.6，排除Y<140区域）")
-    print("  3. 重点区域：右侧中上、右侧中间、左侧中下、底部中间")
-    print("  4. 长截图逐屏处理，返回最高置信度结果")
-    print("=" * 60)
-    
-    # 创建示例文件
     example_txt = "image_paths.txt"
     if not os.path.exists(example_txt):
         with open(example_txt, 'w', encoding='utf-8') as f:
             f.write("# 图片路径列表\n")
             f.write("# 每行一个路径，支持本地路径和URL\n")
-            f.write("# 以#开头的行会被忽略\n\n")
             f.write("# 示例:\n")
             f.write("# page/1.png\n")
             f.write("# https://example.com/image.jpg\n")
         print(f"已创建示例文件: {example_txt}")
-        print("请编辑该文件，添加要识别的图片路径\n")
     
     while True:
         print("\n选择操作:")
